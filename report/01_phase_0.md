@@ -6,7 +6,7 @@ If you feel like you have zero tech experience but you want to get into Cloud Co
 [Go to Phase 1: Linux and Networking fundamentals](../phase1/README.md).
 
 
-Let's get started. 
+Let's get started!
 
 1. I think a good first step is understanding the fundamentals of IT and [this video](https://youtu.be/awLnur5Yt9o) is a fantastic overview.
 
