@@ -12,7 +12,7 @@ titlepage: true
 
 **[Web version here](https://learntocloud.guide)**
 
-This is a guide based on our experiences getting into Cloud and DevOps. Once done, you should have the technical knowledge for roles like:
+This is a guide based on our experiences getting into Cloud and DevOps. Once done, you should have the technical knowledge for roles like
 
 - System administrator.
 - Cloud Support Engineer.
