@@ -1,0 +1,58 @@
+## Minutes
+
+Meeting No. 2
+
+Date: 10:00-11:00 19/01/2022
+
+Attendees: All
+
+### Agenda
+- Discussion through work done
+- Making decisions on libraries to be used
+
+### Actions Made
+- Python in web app research and decision made (using pyodide)
+- Gantt chart outline created, initial wireframes
+- Plan for implementation discussed
+
+### Outstanding Actions (For next week)
+| Name | Task allocated |
+|:-------|:---------------|
+| Daniel |Helping Saad/Seb with requirements/risk table, coordinating different parts of the project |
+| Callum | Continuing with background and motivation writeup
+| Saad | Continuing with Initial Requirements analysis |
+| Bruce | Looking more into pyodide and see if itll work for coles python code |
+| Abigail | Including other functions into wireframes, talking to cole/callum to gain understanding of what’s needed in the UI and Saad/Daniel for tasks in the gantt chart  |
+| Sebastian | Creating table format based on comments from supervisor, uploading to gitlab |
+
+### Decisions made
+Pyodide (running python in the web browser directly rather than porting)
+
+### Questions
+
+
+
+### Notes
+- Discussion on python to JS conversion
+	- Other options discussed but main recommendation Pyodide (Any python packages with wheel can run in browser, existing packages that includes C can be ported to webassembly (existing packages listed in the docs can be used), No backend, runs entirely in browser)
+	- Browser running as a web browser to serve pages back to itself (using Flask)
+- https://pypi.org/project/AdvEMDpy/ or emd_hilbert for EMD (written by Cole in pure python so should work with Pyodide)
+- Unit testing JS - Karma Jasmine frontend testing
+- Unit test Python before porting through Pyodide
+
+Supervisor Meeting
+- Other EMD python packages are pretty basic and structured OO
+- Dependencies could be a big risk (Not many JS EMD libraries)
+- Risks every week (Severity, plan to investigate with prototyping/analysis)
+- Plan to cover edge cases as code is for research and not tested rigorously
+- Pseudocode - for UI is wireframes, for code is not needed in our method (only if we implement algorithms in JS)
+- Server allowed
+- No word/page limit set
+- Pan/Zoom on horizontal axis, mouse over on values
+- Ability to switch on/off data
+- File upload in CSV
+- Each module should be big enough for one person to do (Defined into tasks) - each of these should be tested 
+- will everyone unit test themselves or dedicated unit testing
+
+### Next Meeting Details
+Date: 26/01/2022 10:00-11:00
