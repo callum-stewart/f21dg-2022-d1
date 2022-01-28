@@ -1,0 +1,63 @@
+## Minutes
+
+Meeting No. 3
+
+Date: 10:00-11:00 26/01/2022
+
+Attendees: All
+
+### Agenda
+- Discussion through work done
+- Discussion on requirements, background, demo with pyodide progress, wireframes
+
+### Actions Made
+
+
+
+### Outstanding Actions (For next week)
+| Name | Task allocated |
+|:-------|:---------------|
+| Daniel | Completing the task spec, coordinating different parts of the project |
+| Callum | Continuing with background and motivation writeup |
+| Saad | Continuing with Initial Requirements analysis (Non functional) |
+| Bruce | Looking more into pyodide and see if itll work for coles python code, working on demo/proof of concept |
+| Abigail | Including changes from supervisor meeting into wireframes and filling in gantt chart with task specifications |
+| Sebastian | Completing risk table and mitigation column |
+
+### Decisions made
+Put requirements description into document section
+implement fork of simplified advEMD
+Pyodide should work for our needs
+Not using matplotlib as no interactivity (could use -plotly or d3)
+
+### Questions
+Task specifications?
+GDPR regulations follow? (only client side)
+Gantt chart in excel?
+
+### Notes
+- Requirements almost finished, work in progress for analysis for both functional and non functional 
+- Callum taking a look at methods and any back up JS libraries we could use incase pyodide doesn’t work, will have meeting with Cole for minimum viable product needed for spec
+- Demonstration created with pyodide, need to be careful with memory, need wheel file which checks requirements, with advancedEMD lots of extra requirements, condense down to what we need, add some multithreading so page doesn't freeze (some risks identified in relation to this: compiling cole’s library into pyodide, memory issues etc)
+
+Supervisor Meeting
+- Have a relevant summary line at the end of the section, be brief when needed
+- Report: order should follow spec unless a reason provided 
+- Task specification: chunk of work necessary in D2/3, led by one person, mini spec for each person to carry out, mostly software, e.g. test/review wireframes, maintain risk table, investigate risks from the risk table, 
+	- this could adjust the other specification
+	- consider deliverable (reports for non-software, modules and testing for software)
+	- detailed enough to provide direction without communication with team initially
+	- dependencies with other tasks specified (as well as in gantt chart)
+	- Identify everyone is happy with workload and task given
+	- planning/specification doc
+	- Each task will be ½-1 page
+	- estimate of duration
+	- identify critical tasks
+- Gantt chart - excel is okay, condense down, add as an image on a landscape page, okay to zoom in 
+- efficiency not an issue, not expecting high performance
+- focus on minimum viable product in matplotlib
+- D3 reflection of if this methodology works
+
+
+### Next Meeting Details
+Date: 02/02/2022 10:00-11:00
