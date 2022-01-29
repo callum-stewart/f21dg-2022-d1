@@ -102,11 +102,20 @@ In addition to the initial design and implementation, a thorough unit-testing st
 #### Description:
 ...
 
+[remove in review] NOTE:Did estimates under assumption 10hrs needed per week on this course, I think it was mentioned somewhere -Abie
+
 ## Design and implementation of User-Interface
 #### Member Responsible: Abigail Rivera
-#### Time Required (Estimate): ? hours
+#### Time Required (Estimate): 20 hours (2 weeks)
 #### Description:
-Writing ...
+A clear consistent user interface (UI) is integral to the fulfilment of the specification as the main use of this web application is educating students with no prior knowledge of the subject matter i.e. Time series decomposition and allowing them to experiment with both methods. Within this task the focus should be around the usefulness and effectiveness of the UI and navigation through the application as an educational tool. All controls, settings and access to graphs should be intuitive to use. 
+
+Steps for Completion
+1. Test wireframes designed and ensure they are possible to create within the chosen frontend technologies. Ensure frontend implementation will work well with chosen implementations for graphing animations, processing methods and signal manipu
+2. Build a base frontend interface for both EMD and STFT methods based on wireframe designs, leaving placeholder sections for the generated graphs. 
+3. Communicate with task leads on implementing the EMD, STFT methods as well as input signal manipulation for more detailed setting specifications and include this within the wireframe
+4. Implement bookmarking functionality by adding flags onto URL which will allow the user to share their configuration.
+5. Ensure all class and id names follow the same convention and are consistent with other parts of the application. 
 
 ## Unit Testing
 #### Member Responsible: ?
@@ -121,9 +130,27 @@ Writing ...
 
 ## Creation of a Tutorial
 #### Member Responsible: Abigail Rivera
+#### Time Required (Estimate): 20 hours (2 weeks)
+#### Description:
+A tutorial supplemented by the use of designed web app is crucial to fulfilling deliverable 3. This will involve writing a clear and concise technical article geared toward an audience with a CS background and no prior knowledge of EMD or STFT. The main objective of this task is to allow the user to learn about both methods namely their advantages and disadvantages in order to compare the approaches.
+
+Steps for Completion
+1. Gather useful external materials (peer-reviewed papers, video links) that can be linked within the tutorial paper when gaining a thorough understanding of each method.
+2. Create a short introduction explaining the methods and steps taken to implement each method, although these should also be available in the application itself
+3. Collate main advantages and disadvantages of these methods in order to create examples to demonstrate and highlight these. 
+4. Outline a guide with screenshots and descriptions to using the application including importing signals,combining signals, configuring method settings, applying each method, navigating different graphs produced, overlaying graphs on same time axis and bookmarking. 
+5. Create tasks to work through that demonstrate the various advantages and disadvantages of each method using various different signal types.
+
+
+## Continuous Risk Management
+#### Member Responsible: ?
 #### Time Required (Estimate): ? hours
 #### Description:
-Writing ...
+
+## Demo Presentation
+#### Member Responsible: ?
+#### Time Required (Estimate): ? hours
+#### Description:
 # Techincal Risk Analysis
 ## Risk Table
 | Risk Number | Risk Description | Severity | Chance Of Occuring |
