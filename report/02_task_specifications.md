@@ -17,12 +17,12 @@ Another tenet of this application will be its ability to perform Empirical Mode 
 
 Once again, Cole's Jupyter notebook will be utilized as a benchmark and reference point for comparison testing. The sample data provided in the notebook will be utilized within the chosen library, and the results of the EMD analysis will be compared for their similarity. Ideally they will be identical, however if they are not then investigations will be necessary to ascertain why that is the case; if it is due to the accuracy (i.e. length of float values) then this will be deemed a suitable trade-off, however if the results vary greatly then additional time and consultation with the project stakeholders will be required to understand what's going wrong. 
 
-## Identify library to ensure compatibility between CPython code and JavaScript
+## Identify library to integrate existing Python code into JavaScript running code
 #### Member Responsible: Bruce Wilson
-#### Time Required (Estimate): 3 hours
+#### Time Required (Estimate): 15 hours
 #### Description:
 To reduce the overall workload of the project, it has been decided that an attempt will be made to ensure interoperability between native Python code and JavaScript. This is because of the development team's familiarity with the language (and hence a reduction in time taken to complete milestones) and the abundance of 1st and 3rd party libraries available for the language, which may ease development considerably (such as Matplotlib, Scipy, Numpy, pandas etc...) 
-Preliminary investigations suggest the [Pyodide](https://pyodide.org/en/stable/) library may be suitable for this purpose, due to its inherent support for JavaScript functions and conversion to WebAssembly, which will allow for compatibility amongst a wide range of web browsers.
+Preliminary investigations suggest the [Pyodide](https://pyodide.org/en/stable/) javascript library may be suitable for this purpose. This library makes use of the modern browser feature "WebAssembly", allowing native code from various languages (including a compiled full-featured CPython interpreter, with options in include further python packages) to be embedded entirely in browser.
 
 For this task to be considered complete, the following sub-tasks must be successfully achieved, with any limitations thoroughly documented:
 1. Crucially, this approach must support being embedded in a real-time webpage. As this project is considered a 'proof-of-concept', performance concerns can be ignored for the most part, except in extreme cases (i.e. waiting 5 seconds for a graphing animation to be generated will be considered acceptable). 
