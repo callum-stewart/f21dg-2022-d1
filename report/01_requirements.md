@@ -32,6 +32,12 @@ Both the functional and constraint requirements have been ordered according to t
 | FR 3-2             | The application must support raw signal data to be uploaded for processing by an end user, and not just rely on pre-generated examples.                                                                                                       | Must Have             |
 
 ## Constraint Requirements
-...
 
+### Interface
+| Requirement Number | Description                                                                                                                                                                                                                                   | MoSCoW Prioritization |
+|--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------|
+| FR 1-1             | The web application will be easy to use for users | Must Have             |
+| FR 1-2             | The application must have predefined signal types, which the user can choose from through a drop-down list | Must Have             |  
+| FR 1-3             | The web application will have an online tutorial embedded for the users to see and learn about the advantages and disadvantages of EMD and STFT | Must Have             |
+| FR 1-4             |  Allow users to save Data visualisations | Must Have             |
 
