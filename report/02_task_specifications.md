@@ -104,12 +104,24 @@ The following pseudocode demonstrates a user interaction with the system and dem
 #### Todo: Wireframe of graphics
 
 
-## T7: Animation of STFT and EMD analysis
+## T7: Display of individual signals and STFT / EMD analysis
 #### Member Responsible: ?
-#### Time Required (Estimate): ? hours
+#### Time Required (Estimate): 20 hours
 #### Depends on: T1, T2, T3, T6, T8
 #### Description:
-...
+As this system is intended to allow those with little prior knowledge on signal analysis to further their understanding, time must be taken to provide a high quality visual experience.
+
+However, this task depends on the implementation of many other tasks, and as such, only intial testing and decision of a JavaScript graphing library will be done immediately.
+
+Once the key dependancy, T6, has been completed, implementation can begin of the actual display system for converting a Python->Javascript array of time-points to a visual graph. The other key dependancy for this task is T8, where the graph generated must fit itself in well with the rest of the user interface, however this is more in a non-functional stylistic manner rather than a functional implementation manner.
+
+A framework for completing this task is outlined below:
+1. Investigate and test which javascript graphing library will work well for our use case. Note that we intend to supply it only with a series of points and axis labels(i.e. amplitude over time), and the graph must allow for pan and zoom over these time-points.
+2. Once key dependancies have been completed, implementation of reading Python global variables -> graphing library in Javascript can be created.
+3. These graphs must then be placed where required in T8.
+
+
+#### Todo: Wireframe of graphics
 
 [remove in review] NOTE:Did estimates under assumption 10hrs needed per week on this course, I think it was mentioned somewhere -Abie
 
