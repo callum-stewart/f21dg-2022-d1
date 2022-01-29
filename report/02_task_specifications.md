@@ -86,20 +86,20 @@ A plan to create and test this system is shown below:
 
 The following pseudocode demonstrates a user interaction with the system and demonstrates the dataflow between the user interface and the python interpreter:
 
-1. User clicks "add signal"
-    1.1. Select signal type from drop down
-    1.2. Input parameters depending on signal type
-    1.3. Click "add signal"
-        1.3.1. Javascript sends parameters along with signal type to python
-        1.3.2. Python accepts parameters along with signal type
-        1.3.3. Switch case depending on signal type
-        1.3.4. Generate signal depending on parameters, and storing in array
-        1.3.5. Store array in python global variable, accessible from Javascript
-    1.4. Javascript generates individual signal graph based on data stored in Python
-    1.5. If more than one signal has been created then
-        1.5.1. In Python, generate combined signal depending on type (i.e. sum, product)
-        1.5.2. Store generated combined signal in Python global variable, accessible from Javascript
-    1.6. Javascript generates combined signal graph based on global data stored in Python
+* 1. User clicks "add signal"
+    * 1.1. Select signal type from drop down
+    * 1.2. Input parameters depending on signal type
+    * 1.3. Click "add signal"
+        * 1.3.1. Javascript sends parameters along with signal type to python
+        * 1.3.2. Python accepts parameters along with signal type
+        * 1.3.3. Switch case depending on signal type
+        * 1.3.4. Generate signal depending on parameters, and storing in array
+        * 1.3.5. Store array in python global variable, accessible from Javascript
+    * 1.4. Javascript generates individual signal graph based on data stored in Python
+    * 1.5. If more than one signal has been created then
+        * 1.5.1. In Python, generate combined signal depending on type (i.e. sum, product)
+        * 1.5.2. Store generated combined signal in Python global variable, accessible from Javascript
+    * 1.6. Javascript generates combined signal graph based on global data stored in Python
 
 #### Todo: Wireframe of graphics
 
