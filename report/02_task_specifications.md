@@ -52,6 +52,12 @@ The project requires functionality which supports the user submitting their own 
 
 In addition to the initial design and implementation, a thorough unit-testing strategy will need to be devised which will vet the class under a wide range of circumstances (empty file, irregular data format, file containing special characters etc.) to ensure reliability and robustness when deployed. 
 
+## Creation of custom input signals
+#### Member Responsible: ?
+#### Time Required (Estimate): ? hours
+#### Description:
+...
+
 ## Animation of STFT and EMD analysis
 #### Member Responsible: ?
 #### Time Required (Estimate): ? hours
@@ -59,12 +65,24 @@ In addition to the initial design and implementation, a thorough unit-testing st
 ...
 
 ## Design and implementation of User-Interface
+#### Member Responsible: Abigail Rivera
+#### Time Required (Estimate): ? hours
+#### Description:
+Writing ...
+
+## Unit Testing
 #### Member Responsible: ?
 #### Time Required (Estimate): ? hours
 #### Description:
 ...
+## Integration Testing
+#### Member Responsible: ?
+#### Time Required (Estimate): ? hours
+#### Description:
+...
+
 ## Creation of a Tutorial
-#### Member Responsible: ?
+#### Member Responsible: Abigail Rivera
 #### Time Required (Estimate): ? hours
 #### Description:
-...
+Writing ...
