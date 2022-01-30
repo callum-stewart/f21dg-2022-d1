@@ -105,7 +105,7 @@ The following pseudocode demonstrates a user interaction with the system and dem
 
 
 ## T7: Display of individual signals and STFT / EMD analysis
-#### Member Responsible: ?
+#### Member Responsible: Bruce Wilson
 #### Time Required (Estimate): 20 hours
 #### Depends on: T1, T2, T3, T6, T8
 #### Description:
