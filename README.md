@@ -37,12 +37,25 @@ Both the functional and constraint requirements have been ordered according to t
 ### Interface
 | Requirement Number | Description                                                                                                                                                                                                                                   | MoSCoW Prioritization |
 |--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------|
-| FR 1-1             | The web application will be easy to use for users | Must Have             |
-| FR 1-2             | The application must have predefined signal types, which the user can choose from through a drop-down list | Must Have             |  
-| FR 1-3             | The web application will have an online tutorial embedded for the users to see and learn about the advantages and disadvantages of EMD and STFT | Must Have             |
-| FR 1-4             |  Allow users to save Data visualisations | Must Have             |
+| NFR 1-1             | The web application will be easy to use for users | Should Have             |
+| NFR 1-2             | The application must have predefined signal types, which the user can choose from through a drop-down list | Must Have             |  
+| NFR 1-3             | The web application will have an online tutorial embedded for the users to see and learn about the advantages and disadvantages of EMD and STFT | Must Have             |
+| NFR 1-4             |  Allow users to save Data visualisations | Must Have             |
 
-# Task Specifications
+### Performance
+| Requirement Number | Description                                                                                                                                                                                                                                   | MoSCoW Prioritization |
+|--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------|
+| NFR 2-1             | The web application will have no back-end, all of the functionality will be implemented on the front-end | Must Have             |
+| NFR 2-2             | The application will have very low or no latency since there is no back-end delays | Could Have             |  
+| NFR 2-3             | The application will allow different kinds of data input by the user. It will support data in formats such as csv| Could Have             |  
+| NFR 2-4             | The application will be secure, having security measures in place to disable any attacks on the functionality of the application | Could Have             |  
+| NFR 2-5             | The application will be efficent with the usage of the memory, to allow smooth animations of the data visualitsation and avoid memory problems | Should Have             |  
+
+### Flexibility
+| Requirement Number | Description                                                                                                                                                                                                                                   | MoSCoW Prioritization |
+|--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------|
+| NFR 3-1             | The web application will be compatibility across multiple platforms (FireFox, Chrome) | Could Have             |
+| NFR 3-2             | The web application will be able to handle stress, it will be stress tested to prevent any glitching or any unexpected events to  occur | Could Have             |                      # Task Specifications
 ## T1: Source and adopt existing STFT analysis algorithm
 #### Member Responsible: Callum Stewart
 #### Time Required (Estimate): 3 hours
