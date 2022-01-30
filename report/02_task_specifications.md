@@ -101,8 +101,11 @@ The following pseudocode demonstrates a user interaction with the system and dem
         * 1.5.2. Store generated combined signal in Python global variable, accessible from Javascript
     * 1.6. Javascript generates combined signal graph based on global data stored in Python
 
-#### Todo: Wireframe of graphics
+![User configured signal settings](img/configured_signal_settings.png)
+Figure X. User configured signal settings
 
+![Uploaded signal settings](img/uploaded_signal_settings.png)
+Figure X. Uploaded signal settings
 
 ## T7: Display of individual signals and STFT / EMD analysis
 #### Member Responsible: Bruce Wilson
@@ -120,14 +123,13 @@ A framework for completing this task is outlined below:
 2. Once key dependancies have been completed, implementation of reading Python global variables -> graphing library in Javascript can be created.
 3. These graphs must then be placed where required in T8.
 
+![Graph with pan and zoom](img/panandzoom.png)
+Figure X. Graph shown with pan and zoom controls
 
-#### Todo: Wireframe of graphics
-
-[remove in review] NOTE:Did estimates under assumption 10hrs needed per week on this course, I think it was mentioned somewhere -Abie
 
 ## T8: Design and implementation of User-Interface
 #### Member Responsible: Abigail Rivera
-#### Time Required (Estimate): 20 hours (2 weeks)
+#### Time Required (Estimate): 20 hours
 #### Depends on: T3, T6, 
 #### Description:
 A clear consistent user interface (UI) is integral to the fulfilment of the specification as the main use of this web application is educating students with no prior knowledge of the subject matter i.e. Time series decomposition and allowing them to experiment with both methods. Within this task the focus should be around the usefulness and effectiveness of the UI and navigation through the application as an educational tool. All controls, settings and access to graphs should be intuitive to use. 
@@ -138,6 +140,15 @@ Steps for Completion
 3. Communicate with task leads on implementing the EMD, STFT methods as well as input signal manipulation for more detailed setting specifications and include this within the wireframe
 4. Implement bookmarking functionality by adding flags onto URL which will allow the user to share their configuration.
 5. Ensure all class and id names follow the same convention and are consistent with other parts of the application. 
+
+![EMD configured signal](img/EMD_configured.png)
+Figure X. EMD approach applied to user configured signal
+
+![EMD tab open](img/EMD_imfs_tabs_open.png)
+Figure X. EMD IMFs shown with informational tab open
+
+![STFT uploaded signal](img/STFT_upload.png)
+Figure X. STFT approach applied to uploaded signal
 
 ## T9: Unit Testing
 #### Member Responsible: ?
@@ -155,7 +166,7 @@ Following what is outlined in the Software Integration plan....
 
 ## T11: Creation of a Tutorial
 #### Member Responsible: Abigail Rivera
-#### Time Required (Estimate): 20 hours (2 weeks)
+#### Time Required (Estimate): 20 hours
 #### Depends on: T7, T8
 #### Description:
 A tutorial supplemented by the use of designed web app is crucial to fulfilling deliverable 3. This will involve writing a clear and concise technical article geared toward an audience with a CS background and no prior knowledge of EMD or STFT. The main objective of this task is to allow the user to learn about both methods namely their advantages and disadvantages in order to compare the approaches.
