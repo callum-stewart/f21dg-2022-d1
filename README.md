@@ -248,7 +248,7 @@ The following pseudocode demonstrates a user interaction with the system and dem
 
 ![User configured signal settings](img/configure_settings.PNG)
 
-![Uploaded signal settings](img/uploaded_settings.PNG)
+![Uploaded signal settings](img/upload_settings.PNG)
 
 ## T7: Display of individual signals and STFT / EMD analysis
 #### Member Responsible: Bruce Wilson
