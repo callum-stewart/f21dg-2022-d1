@@ -246,11 +246,9 @@ The following pseudocode demonstrates a user interaction with the system and dem
         * 1.5.2. Store generated combined signal in Python global variable, accessible from Javascript
     * 1.6. Javascript generates combined signal graph based on global data stored in Python
 
-![User configured signal settings](img/configured_signal_settings.png)
-Figure X. User configured signal settings
+![User configured signal settings](img/configured_signal_settings.PNG)
 
-![Uploaded signal settings](img/uploaded_signal_settings.png)
-Figure X. Uploaded signal settings
+![Uploaded signal settings](img/uploaded_signal_settings.PNG)
 
 ## T7: Display of individual signals and STFT / EMD analysis
 #### Member Responsible: Bruce Wilson
@@ -268,8 +266,7 @@ A framework for completing this task is outlined below:
 2. Once key dependancies have been completed, implementation of reading Python global variables -> graphing library in Javascript can be created.
 3. These graphs must then be placed where required in T8.
 
-![Graph with pan and zoom](img/panandzoom.png)
-Figure X. Graph shown with pan and zoom controls
+![Graph shown with pan and zoom controls](img/panandzoom.PNG)
 
 
 ## T8: Design and implementation of User-Interface
@@ -286,13 +283,13 @@ Steps for Completion
 4. Implement bookmarking functionality by adding flags onto URL which will allow the user to share their configuration.
 5. Ensure all class and id names follow the same convention and are consistent with other parts of the application. 
 
-![EMD configured signal](img/EMD_configured.png)
+![EMD approach applied to user configured signal](img/EMD_configured.PNG)
 Figure X. EMD approach applied to user configured signal
 
-![EMD tab open](img/EMD_imfs_tabs_open.png)
+![EMD IMFs shown with informational tab open](img/EMD_imfs_tabs_open.PNG)
 Figure X. EMD IMFs shown with informational tab open
 
-![STFT uploaded signal](img/STFT_upload.png)
+![STFT approach applied to uploaded signal](img/STFT_upload.PNG)
 Figure X. STFT approach applied to uploaded signal
 
 ## T9: Unit Testing
