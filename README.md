@@ -246,9 +246,9 @@ The following pseudocode demonstrates a user interaction with the system and dem
         * 1.5.2. Store generated combined signal in Python global variable, accessible from Javascript
     * 1.6. Javascript generates combined signal graph based on global data stored in Python
 
-![User configured signal settings](img/configured_signal_settings.PNG)
+![User configured signal settings](img/configure_settings.PNG)
 
-![Uploaded signal settings](img/uploaded_signal_settings.PNG)
+![Uploaded signal settings](img/uploaded_settings.PNG)
 
 ## T7: Display of individual signals and STFT / EMD analysis
 #### Member Responsible: Bruce Wilson
@@ -266,7 +266,7 @@ A framework for completing this task is outlined below:
 2. Once key dependancies have been completed, implementation of reading Python global variables -> graphing library in Javascript can be created.
 3. These graphs must then be placed where required in T8.
 
-![Graph shown with pan and zoom controls](img/panandzoom.PNG)
+![Graph shown with pan and zoom controls](img/STFT_upload.PNG)
 
 
 ## T8: Design and implementation of User-Interface
@@ -283,14 +283,18 @@ Steps for Completion
 4. Implement bookmarking functionality by adding flags onto URL which will allow the user to share their configuration.
 5. Ensure all class and id names follow the same convention and are consistent with other parts of the application. 
 
-![EMD approach applied to user configured signal](img/EMD_configured.PNG)
-Figure X. EMD approach applied to user configured signal
+![EMD approach applied to user configured combined signal by product](img/EMD_multiple_product_signal.PNG)
+Figure X. EMD approach applied to user configured combined signal by product
 
-![EMD IMFs shown with informational tab open](img/EMD_imfs_tabs_open.PNG)
-Figure X. EMD IMFs shown with informational tab open
+![EMD approach applied to user configured combined signal by sum](img/EMD_multiple_sum_signal.PNG)
+Figure X. EMD approach applied to user configured combined signal by sum
+
+![Loading overlay triggered with changes in signal or method chosen](img/Loading_graphs.PNG)
+Figure X. Loading overlay triggered with changes in signal or method chosen
 
 ![STFT approach applied to uploaded signal](img/STFT_upload.PNG)
 Figure X. STFT approach applied to uploaded signal
+
 
 ## T9: Unit Testing
 #### Member Responsible: ?
