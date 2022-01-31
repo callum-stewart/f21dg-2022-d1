@@ -43,7 +43,7 @@ Both the functional and constraint requirements have been ordered according to t
 | Requirement Number | Description                                                                                                                                                                                                                                   | MoSCoW Prioritization |
 |--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------|
 | NFR 2-1             | The web application will have no back-end, all of the functionality will be implemented on the front-end. | Must Have             |
-| NFR 2-2             | The application will have very low or no latency since there is no back-end delays. | Could Have             |  
+| NFR 2-2             | The application will have low latency, the application will be effiecient in regards to the overhead of the data visualisation. | Could Have             |  
 | NFR 2-3             | The application will allow different kinds of data input by the user. It will support data in formats such as CSV.| Could Have             |  
 | NFR 2-4             | The application will be efficent with the usage of the memory, to allow smooth animations of the data visualitsation and avoid memory problems. | Should Have             |  
 
