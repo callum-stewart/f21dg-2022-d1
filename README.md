@@ -528,7 +528,10 @@ Following the above theory, the following plan is created:
 * Development of the graphing system can begin once signal generation is able to return data from Python. This may not include all signal types, however once one signal type is correctly being stored and returned, it can be used as an example of how all other signals will be returned from Python to be displayed on the frontend.
 * Development of the tutorial can begin once the graphing system alongside frontend interface are near completion.
 
-Due to the nature of the Python modules, unit testing will be able to be performed on each component individually, alongside following the plan above will aid with knowing when each part of the system can join as part of the system integration tests.# Gantt Chart
+Due to the nature of the Python modules, unit testing will be able to be performed on each component individually, alongside following the plan above will aid with knowing when each part of the system can join as part of the system integration tests.
+
+
+# Gantt Chart
 ![Whole Project Gantt Chart](img/GanttChartFinal.PNG)
 
 
