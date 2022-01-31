@@ -198,7 +198,7 @@ Both the functional and constraint requirements have been ordered according to t
 > NB: In an effort to reduce repeated task requirements, the project will emphasise the importance of the 'Ownership' philosophy, in that the developer who constructs a component is the SME (Subject Matter Expert) of that component, and hence will be best suited for bug-fixing and unit-testing that component. This replaces an explicit 'Unit Testing' task specification, whereby only 1 person in the project would be held accountable for testing components they may not be familiar with. 
 ## T1: Source and adopt existing STFT analysis algorithm
 #### Member Responsible: Callum Stewart
-#### Time Required (Estimate): 3 hours
+#### Time Required (Estimate): 5 hours
 #### Depends on: T3, T6
 #### Description: 
 A core tenet of our application is the ability to perform Short Time Fourier Transform analysis on a variety of given signal data types. We must, by taking all reasonable steps, avoid implementing this complex algorithm from scratch if possible, and instead adopt a compatible library so that we can direct our efforts on providing functionality elsewhere in the application. With the assumption that our Python-to-JavaScript conversion efforts bear fruit, the [following library](https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.stft.html) may be of use. 
@@ -209,7 +209,7 @@ Once a library has been adopted, unit tests will then be written to ensure consi
 
 ## T2: Identify & Adopt EMD Algorithm for Signal Analysis
 #### Member Responsible: Callum Stewart
-#### Time Required (Estimate): 3 hours
+#### Time Required (Estimate): 5 hours
 #### Depends on: T3, T6
 #### Description: 
 Another tenet of this application will be its ability to perform Empirical Mode Decomposition analysis on a given sample of signal data. As a consequence of it being a more niche, less well-known algorithm, priority will be assigned to this task to ensure ample time to locate a suitable pre-existing library (for instance, [this one](https://emd.readthedocs.io/en/stable/)) and/or consult the project stakeholders for sample code and resources to re-implement the algorithm independently. The latter being the less desirable of the two options due to the extra time required to ensure the robustness of the implementation; with a 'stable' release of a 3rd party library, a reasonable level of confidence can be assumed that the implementation is robust and free from debilitating bugs. 
