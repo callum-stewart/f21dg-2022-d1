@@ -145,10 +145,8 @@ Both the functional and constraint requirements have been ordered according to t
 | Requirement Number | Description                                                                                                                                                                                                                                                          | MoSCoW Prioritization |
 |--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------|
 | FR-1-1             | The application must support Short-Time Fourier Transform (STFT) time series analysis on input signal data.                                                                                                                                                          | Must Have             
-| FR-1-2             | The application must support Empirical Mode Decomposition (EMD) time series analysis on input signal data.                                                                                                                                                           | Must Have             
-| FR-1-3             | The application must be able to identify the type of signal either generated or uploaded by an end user. E.g. Sinusoidal, Trending, Noise, Chirping etc.                                                                                                             | Must Have             
-| FR-1-4             | The application must support the deconstruction of given, identifiable signal data into its respective functional components. I.e. The orthogonal, sinusoidal components of a periodic signal can be extracted via Fast Fourier Transform and delivered to the user. | Must Have             
-| FR-1-5             | The application must support the extraction of Intrinsic Mode Functions (IMF) from given signal data via EMD analysis.                                                                                                                                               | Must Have            
+| FR-1-2             | The application must support Empirical Mode Decomposition (EMD) time series analysis on input signal data and export the resultant IMFs for use in other components of the application.                                                                                                                                                           | Must Have                       
+| FR-1-3             | The application must support the deconstruction of given, identifiable signal data into its respective functional components. I.e. Deconstruct periodical sinusoidal signal data via STFT and display its extracted frequencies in a spectragram.  | Must Have                    
 
 ### User Interface
 | Requirement Number | Description                                                                                                                                                                                                          | MoSCoW Prioritization |
@@ -157,8 +155,8 @@ Both the functional and constraint requirements have been ordered according to t
 | FR 2-2             | The application must support simultaneously displaying the original, unaltered signal data and the extracted components on a common time base (i.e. over a period of 10 seconds) in a graph embedded in the webpage. | Must Have             |
 | FR 2-3             | The application must support simultaneously displaying the instantaneous frequencies of the original components alongside the IMF and STFT estimates in a graph embedded in the webpage.                             | Must Have             |
 | FR 2-4             | The application must support 'bookmarking' functionality; allowing users to share their configurations and parameters for signal analysis.                                                                           | Must Have             |
-| FR 2-5             | The application should display animations showcasing the differences in techniques and behaviours between EMD and STFT analysis.                                                                                     | Should Have           |
-| FR 2-6             | The application should explain the advantages and disadvantages between STFT and EMD signal analysis.                                                                                                                | Should Have           |   
+| FR 2-5             | The application must explain the advantages and disadvantages between STFT and EMD signal analysis.                                                                                                                | Must Have           |
+| FR 2-6             | The application should display animations showcasing the differences in techniques and behaviours between EMD and STFT analysis.                                                                                     | Should Have           |   
 | FR 2-7             | The application should allow the user to generate custom signal data from a set of pre-defined types for processing.                                                                                                                | Should Have           |   
 
 ### Generic
@@ -172,25 +170,27 @@ Both the functional and constraint requirements have been ordered according to t
 ### Interface
 | Requirement Number | Description                                                                                                                                                                                                                                   | MoSCoW Prioritization |
 |--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------|
-| NFR 1-1             | The web application will be easy to use for users | Should Have             |
-| NFR 1-2             | The application must have predefined signal types, which the user can choose from through a drop-down list | Must Have             |  
-| NFR 1-3             | The web application will have an online tutorial embedded for the users to see and learn about the advantages and disadvantages of EMD and STFT | Must Have             |
-| NFR 1-4             |  Allow users to save Data visualisations | Must Have             |
+| NFR 1-1             | The web application will be easy to use for users. | Should Have             |
+| NFR 1-2             | The application must have predefined signal types, which the user can choose from through a drop-down list. | Must Have             |  
+| NFR 1-3             | The web application will have an online tutorial embedded for the users to see and learn about the advantages and disadvantages of EMD and STFT. | Must Have             |
+| NFR 1-4             |  Allow users to save data visualisations. | Must Have             |
 
 ### Performance
 | Requirement Number | Description                                                                                                                                                                                                                                   | MoSCoW Prioritization |
 |--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------|
-| NFR 2-1             | The web application will have no back-end, all of the functionality will be implemented on the front-end | Must Have             |
-| NFR 2-2             | The application will have very low or no latency since there is no back-end delays | Could Have             |  
-| NFR 2-3             | The application will allow different kinds of data input by the user. It will support data in formats such as csv| Could Have             |  
-| NFR 2-4             | The application will be secure, having security measures in place to disable any attacks on the functionality of the application | Could Have             |  
-| NFR 2-5             | The application will be efficent with the usage of the memory, to allow smooth animations of the data visualitsation and avoid memory problems | Should Have             |  
+| NFR 2-1             | The web application will have no back-end, all of the functionality will be implemented on the front-end. | Must Have             |
+| NFR 2-2             | The application will have low latency, the application will be effiecient in regards to the overhead of the data visualisation. | Could Have             |  
+| NFR 2-3             | The application will allow different kinds of data input by the user. It will support data in formats such as CSV.| Could Have             |  
+| NFR 2-4             | The application will be efficent with the usage of the memory, to allow smooth animations of the data visualisations and avoid memory problems. | Should Have             |  
 
 ### Flexibility
 | Requirement Number | Description                                                                                                                                                                                                                                   | MoSCoW Prioritization |
 |--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------|
 | NFR 3-1             | The web application will be compatibility across multiple platforms (FireFox, Chrome) | Could Have             |
-| NFR 3-2             | The web application will be able to handle stress, it will be stress tested to prevent any glitching or any unexpected events to  occur | Could Have             |                      # Task Specifications
+| NFR 3-2             | The web application will be able to handle stress, it will be stress tested to prevent any glitching or any unexpected events to  occur | Could Have             |
+| NFR 3-3             | The application will not be tested or designed for use on Mobile devices. | Will Not Have             |                      
+# Task Specifications
+> NB: In an effort to reduce repeated task requirements, the project will emphasise the importance of the 'Ownership' philosophy, in that the developer who constructs a component is the SME (Subject Matter Expert) of that component, and hence will be best suited for bug-fixing and unit-testing that component. This replaces an explicit 'Unit Testing' task specification, whereby only 1 person in the project would be held accountable for testing components they may not be familiar with. 
 ## T1: Source and adopt existing STFT analysis algorithm
 #### Member Responsible: Callum Stewart
 #### Time Required (Estimate): 3 hours
@@ -217,21 +217,21 @@ Once again, Cole's Jupyter notebook will be utilized as a benchmark and referenc
 #### Depends on: T4
 #### Description:
 To reduce the overall workload of the project, it has been decided that an attempt will be made to ensure interoperability between native Python code and JavaScript. This is because of the development team's familiarity with the language (and hence a reduction in time taken to complete milestones) and the abundance of 1st and 3rd party libraries available for the language, which may ease development considerably (such as Matplotlib, Scipy, Numpy, pandas etc...) 
-Preliminary investigations suggest the [Pyodide](https://pyodide.org/en/stable/) javascript library may be suitable for this purpose. This library makes use of the modern browser feature "WebAssembly", allowing native code from various languages (including a compiled full-featured CPython interpreter, with options in include further python packages) to be embedded entirely in browser.
+Preliminary investigations suggest the [Pyodide](https://pyodide.org/en/stable/) javascript library may be suitable for this purpose. This library makes use of the modern browser feature "WebAssembly", allowing native code from various languages (including a compiled full-featured CPython interpreter, with options in include further python packages) to be embedded entirely in browser. It should however be noted that this is not a done deal, and lots of massaging of Python packages and their requirements will be required to ensure that they work through the browser version. Any Python package that also makes use of C native code will have to be pre-compiled into WebAssembly, which may present difficulty.
 
 For this task to be considered complete, the following sub-tasks must be successfully achieved, with any limitations thoroughly documented:
 1. Crucially, this approach must support being embedded in a real-time webpage. As this project is considered a 'proof-of-concept', performance concerns can be ignored for the most part, except in extreme cases (i.e. waiting 5 seconds for a graphing animation to be generated will be considered acceptable). 
-2. Consultation must be taken with other team members responsible for developing the interactivity of the web-application to identify core/crucial libraries needed to deliver this functionality. Once these libraries are identified, each one must with the intended approach to ensure intended functionality.
-3.  Finally, the deployment of this approach must require no 'back-end' or server side communication, aside from delivery of the web application to the client. It must work using only the client's browser engine locally.
+2. Consultation must be taken with other team members responsible for developing the interactivity of the web-application to identify core/crucial libraries and dependencies needed to deliver this functionality. Once these libraries are identified, a version-control mechanism for dependency management will be needed during the project-compilation process to ensure sub-dependencies (i.e. dependencies of dependencies) are compatible with our approach, and that newer versions do not break this compatability.
+3. Finally, the deployment of this approach must require no 'back-end' or server side communication, aside from delivery of the web application to the client. It must work using only the client's browser engine locally.
 
-Due to the inherent risk associated with this task and the implications it has for the remainder of the project's development cycle, it will be given priority over other tasks to verify its completion. If it cannot be achieved, or at least not practically, then an approach will instead be devised using solely JavaScript and HTML; the results of this testing initiative will need to be discovered within a week of Deliverable 2 commencing. 
+Due to the inherent risk associated with this task and the implications it has for the remainder of the project's development cycle, it will be given priority over other tasks to verify its completion. If it cannot be achieved, or at least not practically, then an approach will instead be devised using solely JavaScript and HTML; the results of this testing initiative will need to be discovered within two weeks of Deliverable 2 commencing. 
 
 ## T4: Project Management & Documentation
 #### Member Responsible: Daniel Scott
 #### Time Required (Estimate): 6 hours
 #### Depends on: Nil
 #### Description:
-The project manager is responsible for organising the timely completion of tasks, removing blockers impacting development, leading group discussion and stepping in to assist other members of the group with their tasks, amongst a number of other tasks vital to ensuring development continues unhindered. In addition to this, they are the primary attaché for writing the documentation required for the project, such as Deliverable submissions. 
+The project manager is responsible for organising the timely completion of tasks, removing blockers impacting development, leading group discussion and stepping in to assist other members of the group with their tasks, amongst a number of other tasks vital to ensuring development continues unhindered. In addition to this, they are the primary attaché for writing the documentation required for the project, such as Deliverable submissions. The project manager will also direct group efforts ensuring they follow the 'Agile' development methodology; this methodology breaks the project down into small, iterative tasks which are assigned to developers in 'Sprints' (small, typically week-long phases throughout the course of development).  
 
 The plan for executing this task is as follows: 
 1. Arrange weekly meetings and monitor attendance to ensure all group members are regularly attending. If recurring absences are observed, privately reach out to the group member(s) inquiring the reason for their absence (should they choose to disclose it) and if they need any additional support with their share of the work. 
@@ -245,9 +245,19 @@ The plan for executing this task is as follows:
 #### Time Required (Estimate): 3 hours
 #### Depends on: T3
 #### Description:
-The project requires functionality which supports the user submitting their own signal data for both STFT and EMD analysis. A robust File I/O class must be created which will support this behaviour. The class will require a brief design to plan out what file types are supported, the format of the supported files (i.e. JSON lines or JSON array?) and how the information read by the class will be stored for reading by other components of the system. The File I/O class is a non-negligible aspect of the implementation, explicitly being defined as a functional requirement, and thus will take a while to identify suitable approaches and libraries to ensure its functionality matches the requirements set forth.
+The project requires functionality which supports the user submitting their own signal data for both STFT and EMD analysis. A robust File I/O class must be created which will support this behaviour. The class will require a brief design to plan out what file types are supported (i.e .csv), the format of the supported files and how the information read by the class will be stored for reading by other components of the system. The File I/O class is a non-negligible aspect of the implementation, explicitly being defined as a functional requirement, and thus will take a while to identify suitable approaches and libraries to ensure its functionality matches the requirements set forth.
 
 In addition to the initial design and implementation, a thorough unit-testing strategy will need to be devised which will vet the class under a wide range of circumstances (empty file, irregular data format, file containing special characters etc.) to ensure reliability and robustness when deployed. 
+#### Pseudocode:
+when: user presses '**Upload Signal Data**' button
+
+then:
+
+1. Open File I/O GUI box for user to select which file to upload for analysis.
+2. Once User selects file, ensure the filename extension matches an approved set in a allow-list
+> 2.1. If extension does not appear on allow-list, present warning dialog to user informing them that their file extension is not supported, and list supported file types. User may then again try to upload their signal data for analysis.
+3. Read contents of supported file into memory
+4. Store contents of file into a global variable that can then be supplied to the Python back-end logic for analysis.
 
 ## T6: Creation of custom input signals
 #### Member Responsible: Bruce Wilson
@@ -295,8 +305,6 @@ The following pseudocode demonstrates a user interaction with the system and dem
 
 ![User configured signal settings](img/configure_settings.PNG)
 
-![Uploaded signal settings](img/upload_settings.PNG)
-
 ## T7: Display of individual signals and STFT / EMD analysis
 #### Member Responsible: Saad Badshah
 #### Time Required (Estimate): 20 hours
@@ -315,49 +323,30 @@ A framework for completing this task is outlined below:
 
 ![Graph shown with pan and zoom controls](img/STFT_upload.PNG)
 
-
 ## T8: Design and implementation of User-Interface
 #### Member Responsible: Abigail Rivera
 #### Time Required (Estimate): 20 hours
-#### Depends on: T3, T6, 
+#### Depends on: T3, T6
 #### Description:
-A clear consistent user interface (UI) is integral to the fulfilment of the specification as the main use of this web application is educating students with no prior knowledge of the subject matter i.e. Time series decomposition and allowing them to experiment with both methods. Within this task the focus should be around the usefulness and effectiveness of the UI and navigation through the application as an educational tool. All controls, settings and access to graphs should be intuitive to use. 
+A clear consistent user interface (UI) is integral to the fulfilment of the specification as the main use of this web application is educating students with no prior knowledge of the subject matter i.e. Time series decomposition and allowing them to experiment with both methods. Within this task the focus should be around the usefulness and effectiveness of the UI and navigation through the application as an educational tool. All controls, settings and access to graphs should be intuitive to use.
 
-Steps for Completion
-1. Test wireframes designed and ensure they are possible to create within the chosen frontend technologies. Ensure frontend implementation will work well with chosen implementations for graphing animations, processing methods and signal manipu
+Steps for Completion:
+1. Test wireframes designed and ensure they are possible to create within the chosen frontend technologies. Ensure frontend implementation will work well with chosen implementations for graphing animations, processing methods and signal manipulation.
 2. Build a base frontend interface for both EMD and STFT methods based on wireframe designs, leaving placeholder sections for the generated graphs. 
-3. Communicate with task leads on implementing the EMD, STFT methods as well as input signal manipulation for more detailed setting specifications and include this within the wireframe
+3. Communicate with task leads on implementing the EMD, STFT methods as well as input signal manipulation for more detailed setting specifications and include this within the wireframe.
 4. Implement bookmarking functionality by adding flags onto URL which will allow the user to share their configuration.
 5. Ensure all class and id names follow the same convention and are consistent with other parts of the application. 
 
 ![EMD approach applied to user configured combined signal by product](img/EMD_multiple_product_signal.PNG)
-Figure X. EMD approach applied to user configured combined signal by product
 
 ![EMD approach applied to user configured combined signal by sum](img/EMD_multiple_sum_signal.PNG)
-Figure X. EMD approach applied to user configured combined signal by sum
 
 ![Loading overlay triggered with changes in signal or method chosen](img/Loading_graphs.PNG)
-Figure X. Loading overlay triggered with changes in signal or method chosen
 
 ![STFT approach applied to uploaded signal](img/STFT_upload.PNG)
-Figure X. STFT approach applied to uploaded signal
 
-
-## T9: Unit Testing
-#### Member Responsible: ?
-#### Time Required (Estimate): 50 hours
-#### Depends on: All
-#### Description:
-All completed software modules are to be subjected to unit testing to isolate bugs in each module and prevent whole application failure. 
-
-Steps for completion:
-1. Identify methodology or framework to be used for unit testing, coordinate with head of integration testing to ensure this is appropriate. 
-2. Iteratively include all modules as they are completed and updated into the unit testing suites and provide feedback in a timely manner to the team with any failures identified and possible solutions if applicable.
-3. Once modules have been tested include this with evidence in the the test report. 
-4. Test all system validation with likely use cases and record within the test report. 
-
-## T10: Integration Testing
-#### Member Responsible: ?
+## T9: Integration Testing
+#### Member Responsible: Sebastian
 #### Time Required (Estimate): 10 hours
 #### Depends on: All
 #### Description:
@@ -367,29 +356,29 @@ Steps for completion:
 1. Identify methodology or framework to be used for integration testing, ensure this is compatible with unit testing process. 
 2. Iteratively include all modules as they are completed and updated into the integration testing and provide feedback in a timely manner to the team with any failures identified and possible solutions if applicable.
 
-## T11: Creation of a Tutorial
-#### Member Responsible: Abigail Rivera
+## T10: Creation of a Tutorial
+#### Member Responsible: Callum Stewart
 #### Time Required (Estimate): 20 hours
 #### Depends on: T7, T8
 #### Description:
-A tutorial supplemented by the use of designed web app is crucial to fulfilling deliverable 3. This will involve writing a clear and concise technical article geared toward an audience with a CS background and no prior knowledge of EMD or STFT. The main objective of this task is to allow the user to learn about both methods namely their advantages and disadvantages in order to compare the approaches.
+A tutorial supplemented by the use of designed web app is crucial to fulfilling Deliverable 3. This will involve writing a clear and concise technical article geared toward an audience with a CS background and no prior knowledge of EMD or STFT. The main objective of this task is to allow the user to learn about both methods namely their advantages and disadvantages in order to compare the approaches.
 
 Steps for Completion
-1. Gather useful external materials (peer-reviewed papers, video links) that can be linked within the tutorial paper when gaining a thorough understanding of each method.
-2. Create a short introduction explaining the methods and steps taken to implement each method, although these should also be available in the application itself
+1. Gather useful external materials (peer-reviewed papers, video links) that may be linked within the tutorial paper when gaining a thorough understanding of each method.
+2. Create a brief introduction explaining the methods and steps taken to implement each method, although these should also be available in the application itself.
 3. Collate main advantages and disadvantages of these methods in order to create examples to demonstrate and highlight these. 
-4. Outline a guide with screenshots and descriptions to using the application including importing signals,combining signals, configuring method settings, applying each method, navigating different graphs produced, overlaying graphs on same time axis and bookmarking. 
+4. Outline a guide with screenshots and descriptions to using the application including importing signals, combining signals, configuring method settings, applying each method, navigating different graphs produced, overlaying graphs on same time axis and bookmarking. 
 5. Create tasks to work through that demonstrate the various advantages and disadvantages of each method using various different signal types.
 
-## T12: Continuous Risk Management
-#### Member Responsible: ?
-#### Time Required (Estimate): ?
+## T11: Continuous Risk Management
+#### Member Responsible: Daniel
+#### Time Required (Estimate): 50
 #### Depends on: All
 #### Description:
 Managing risk within this project will be handled through an iterative proccess of identifying, preventing and mitigating any known risks. This will be done each week to ensure all critical failures are avoided or mitigated early on. Through the D1 deliverable a risk table has been created with existing risks and will be updated by the task leader with feedback from the rest of the group when required. 
 
-## T13: Demo Presentation
-#### Member Responsible: Saad?
+## T12: Demo Presentation
+#### Member Responsible: Saad
 #### Time Required (Estimate): 4 hours
 #### Depends on: All
 #### Description:
@@ -397,13 +386,13 @@ After developing a project its very important to have a presentation for the use
 
 Steps for Demonstration:
 1. Each individual responsible for a piece of functionality they have been working on will capture a short screen recording of the working functionality they have developed.
-2. The team should then make a powerpoint presentation which includes slides on introduction to the project, The background information, Archetecture of the application, Justification for the technologies used in development and the must have functional requirements, and the planning process which went behind the decisions made to implement the key functionality. Class diagrams flow charts etc can be added to explain the archetecture in more detail.
+2. The team should then make a powerpoint presentation which includes slides on introduction to the project, The background information, Architecture of the application, Justification for the technologies used in development and the must have functional requirements, and the planning process which went behind the decisions made to implement the key functionality. Class diagrams, flow charts etc can be added to explain the architecture in more detail.
 3. The tasks that were assigned will be discussed by each individual that was responsible for the task, the screen recording captured in step 1 should be played and the person who developed it should discuss it in further detail going in detail about how the flow of the functionality works.
 4. Future improvements section should be included which discusses the future functionality that can be added to the application to make it more efficent and even perform more detailed analysis and any future functionality that we might want to add.
 5. In the end a conclusion section should be included which discussed the key take aways from this project.
 
-## T14: Creation of the design manual
-#### Member Responsible: -
+## T13: Creation of the design manual
+#### Member Responsible: Daniel
 #### Time Required (Estimate): 5 hours
 #### Depends on: All
 #### Description:
@@ -425,7 +414,7 @@ This section will be split into 4 tables:
 - Actions to Reduce Severity
 - Completed Actions
 
-In 'General Risks' we outline risks that are not related to the techincal aspect of the projet. We describe the possible risks, give them a severity and the chance of the risk occuring. A concise mitigation plan is also written up to give our team a clear plan that will help resolve any probelms caused by the risk.
+The 'General Risks' section outlines potential risks to the project which cannot be categorized as 'technical'. We describe the possible risks, give them a severity and the chance of the risk occuring. A concise mitigation plan is also written up to give our team a clear plan that will help resolve any probelms caused by the risk.
 
 In 'Technical Risks' we focus on the techincal aspect of the project. We outline the same information as in the 'General Risks': a description, severity, chance of occuring and a mitigation plan, as well as a risk ID that is used in the later tables to identify which action correlates to which risk.
 
@@ -443,44 +432,43 @@ The final table 'Completed Actions' is used to keep a record of what actions hav
 |---|:---:|:---:|---|
 |Group member not attending a group meeting unexpectedly.|Medium|Low|Project Lead will take over the speaking points of the missing group member. Also if any task allocations are made during a meeting the group member willl have no input over their task (As long as they are allocated reasonably)|
 |Group member unable to complete their tasks due to being ill.|Medium|Medium|As soon as we are notified that a group member is unable to complete their current task due to being ill we will have to evaluate what work has been done this week and allocate the uncomplete task to group members with the most available time.|
-|Data being lost during the project.|High|Low|To keep the chances as low as possible of any data being lost, all project files, code and report are uploaded to GitLab. Additionally some group members will regularly download a backup of the GitLab repository.|
-|||||
-|||||
-|||||
-|||||
-|||||
-|||||
+|Group member not communicating with the rest of the team.|Medium|Low|If a group member goes silent their work will have to be redistributed among the rest of the team for the time they are not responing or until the rest of the project as deadlines still have to be met.|
+|Data being lost during the project.|High|Low|Depenging on how far into the project we are restarting the project might be an option but if this would happen near the deadling the project would have to be terminated. To keep the chances as low as possible of any data being lost, all project files, code and report are uploaded to GitLab. Additionally some group members will regularly download a backup of the GitLab repository.|
+|Gantt chart deadlines not being met.|High|Medium|If deadlines are being missed we will have to re-evaluate the requirements and focus on the main functionality outlined by 'Must Have' in the requirements, while decreasing the priority on the 'Should Have' and 'Could Have'. |
+|Group member disagrees with a project decision|Medium|Low|If only one or two members disagree with a decision it will be ultimetly our project leads choice, if the group member still disagrees they can escelate the problem to the project supervisor.|
+
+
+
 ### TODO -- add more some general risks
 
 ## Technical Risks
 | Risk Number | Risk Description | Severity | Chance Of Occuring | Mitigation Plan|
 |:---:|---|:---:|:---:|-----|
-|1|Using Cole's python code in broswer via `Pyodide` is unsuccessful. | High | High  | If we are unable to use Cole's python code for EMD and STFT, we will have to find a different libraries either in JavaScript or Python if we manage to run Python code in browser.  |
-|2|EMD or STFT libraries braking during runtime. Very unique edge cases can cause the code to break but the majority must be fully working. <br/><br/> Possible extra problems caused if we are forced to translate parts of code from Python to JavaScript. |Medium|High| Creat unit test to check how robust the code is, if any problems are found we will try to fix the code thats the problem or if that is unfeasible  we will notify the user of the limitations if there are any. |
+|1|The EMD or STFT python libraries breaking when running in broswer via `Pyodide`. | High | High  | Depending on the cause of code breaking we will either find alternative libraries for EMD or STFT if they are the cause of the problems, or we will need to port Python code to JavaScript if 'Pyodide' is the problem.|
+|2|EMD or STFT libraries braking during runtime. Very unique edge cases can cause the code to break but the majority must be fully working. <br/><br/> Possible extra problems caused if we are forced to translate parts of code from Python to JavaScript. |Medium|High|  |
 |3|Initial functional requirements not fully planned out. |High|Medium|If during development we find a part of the requirements to not be fully explained in the functionaly requirements we will set up a short meeting to create a plan for the missing requirements and assign tasks accordingly.|
-|4|System memory problems during the runtime of Python code in browser. First tests of running code in browser identified this as a possibility.|Medium|Medium| We will need to find the source of the problem and either fix the code ourselves or find better and more performant libraries that accomplish the same task. |
-|5|Concurrency issues in JavaScript. In testing we found that using Python in browser via `Pyodide` runs everything on the main thread and web page becomes unresponsive while running code, so concurrency will need to be added for a smoother experience. |Low|Medium|If during development we are unable to make the application concurrent, we will just have to run the application on a single thread which isn't a big problem as having the application run faster is just a nice to have feature. Will just need to add a warning for the user to inform them that the application might appear frozen at times.
-|6|Problems with GitLab collaboration.|Medium|Medium|We will have to make regular back ups in case some problems arise with GitLab, and 1 person will be resposible for keeping the GitLap repository organised.
-|7|User interface of the front end missing features or badly designed. |Medium|Low| We will need to sketch up new interface mock ups and focus on adding features we have missed in the planning stage or were badly designed. |
-|8| Requirements analysis document missing sections, have incomplete sections or sections aren't up to the specifications. |Medium|Low|If any requirements are found to be missing during development we will need to organise a meeting to create plans for the missing requirements and allocate the tasks.
-|9|Support for EMD or STFT in JavaScript might not exist and may need to be ported from Python.|Medium|Low|Since our plan is to execute Python code in browser this is has a low chance of being a risk but me may need to port over Python code to JavaScript.|
-|10|Not fully understanding the mathematics behind EMD or STFT. | Medium | Medium | Meet up with Cole if possible to get clarification on parts of the mathematics that we do not understand. |
+|4|Support for EMD or STFT in JavaScript might not exist and may need to be ported from Python.|High|Medium|Since our plan is to execute Python code in browser this is has a low chance of being a risk but me may need to port over Python code to JavaScript.|
+|5|System memory problems during the runtime of Python code in browser. First tests of running code in browser identified this as a possibility.|Medium|Medium| We will need to find the source of the problem and either fix the code ourselves or find better and more performant libraries that accomplish the same task. |
+|6|Problems with GitLab collaboration.|Medium|Medium| As GitLab is a requirement in this project, GitLab breaking would be a unique circumstance that would need to be resolved with the project supervisor. |
+|7|Not fully understanding the mathematics behind EMD or STFT. | Medium | Medium | Meet up with Cole if possible to get clarification on parts of the mathematics that we do not understand. |
+|8|Concurrency issues in JavaScript. In testing we found that using Python in browser via `Pyodide` runs everything on the main thread and web page becomes unresponsive while running code, so concurrency will need to be added for a smoother experience. |Low|Medium|If during development we are unable to make the application concurrent, we will just have to run the application on a single thread which isn't a big problem as having the application run faster is just a nice to have feature. Will just need to add a warning for the user to inform them that the application might appear frozen at times.
+|9|User interface of the front end missing features or badly designed. |Medium|Low| We will need to sketch up new interface mock ups and focus on adding features we have missed in the planning stage or were badly designed. |
+|10| Requirements analysis document missing sections, have incomplete sections or sections aren't up to the specifications. |Medium|Low|If any requirements are found to be missing during development we will need to organise a meeting to create plans for the missing requirements and allocate the tasks.
 
 
 ## Current Actions to Reduce Severity
 | Risk Number | Person Responsible | Possible Action to Reduce Severity |
 |:---:|:---:|---|
-|1 & 4-5|Bruce|Create a test environment to test running Python code in browser via `Pyodide`, if unsuccessful test the other options discussed in the first meeting. |
-|2|Callum|Run extensive tests on Cole's code in the Jupyter Notebook provided, test the main functionality outlined by the functional requirements. <br/>Run extra tests in a `Pyodide` environment to further test the robustness of both the code and the Python code running in browser.|
-|3| Saad | If possible meet up with Cole and present the current requirements and get feedback from him and make any change to the requirements that he may suggest. |
-|6| Sebastian | Have a seesion with the entire team to make sure every team member fully understands how collaboration in GitLab works. |
-|7|	Abigail | Again a meeting with Cole would be ideal as he will know best what the users would look for in the front end, possibly discuss this in the same meeting as the requirements.|
-|8|Daniel|Discuss the state of the current draft of the document in a meeting, if problems arise then chase up people responsible for certain sections or assign help to incomplete sections.|
-
-### TODO -- create some more actions 
+|1|Bruce|Create a test environment to test running Python code in browser via `Pyodide`, if unsuccessful, test the other options discussed in the first meeting. |
+||Callum| Create unit test to check how robust the EMD and STFT libraries are, if any problems are found we will try to fix the code thats the problem or if that is unfeasible  we will notify the user of the limitations if there are any.<br/>Run extra tests in a `Pyodide` environment to further test the robustness of both the code and the Python code running in browser.|
+|| Saad | If possible meet up with Cole and present the current requirements and get feedback from him and make any change to the requirements that he may suggest. |
+|| Sebastian | Have a seesion with the entire team to make sure every team member fully understands how collaboration in GitLab works. |
+||	Abigail | Again a meeting with Cole would be ideal as he will know best what the users would look for in the front end, possibly discuss this in the same meeting as the requirements.|
+||Daniel|Discuss the state of the current draft of the document in a meeting, if problems arise then chase up people responsible for certain sections or assign help to incomplete sections.|
+|||We will have to make regular back ups in case some problems arise with GitLab, and one person will be resposible for keeping the GitLab repository organised.|
 
 ## Completed Actions 
-| Risk Number | Person Responsible | Possible Action to Reduce Severity |
+| Risk Number | Person Responsible | Action and effect on risk |
 |:---:|:---:|---|
 ||||
 
@@ -518,7 +506,7 @@ Using the two examples listed above, we can see that the Python backend is actin
 
 What this means is we can create the Python signal generating code, signal combining, EMD analysis, STFT analysis, as separate Python modules that all can communicated with from Javascript, and all can communicate to store their state with a memory module (or more simply, organised Python globals).
 
-These modules in theory can be developed independently from each other, however they must follow the agreements made previosuly on which data and in what order it will be sent.
+These modules in theory can be developed independently from each other, however they must follow the agreements made previously on which data and in what order it will be sent.
 
 Following the above theory, the following plan is created:
 
@@ -572,9 +560,9 @@ The table below outlines how the reponsiblities in the team are distributed usin
 | FR 8   | The application must support simultaneously displaying the instantaneous frequencies of the original components alongside the IMF and STFT estimates in a graph embedded in the webpage.        | T7      |                       |
 | FR 9   | The application must support 'bookmarking' functionality; allowing users to share their configurations and parameters for signal analysis.        | T8      |                       |
 | FR 10   | The application should display animations showcasing the differences in techniques and behaviours between EMD and STFT analysis.        | T11      |                       |
-| FR 11   | The application should explain the advantages and disadvantages between STFT and EMD signal analysis.        | T11      |                       |
+| FR 11   | The application should explain the advantages and disadvantages between STFT and EMD signal analysis.        | T10      |                       |
 | FR 12   | The application should allow the user to generate custom signal data from a set of pre-defined types for processing.        | T8     |                       |
-| FR 13   | The application must be extensively tested via unit and integration testing to verify individual components behave predictably and correctly, and multiple components working in conjunction behave reliably and deliver the expected result.        | T9, T10      |                       |
+| FR 13   | The application must be extensively tested via unit and integration testing to verify individual components behave predictably and correctly, and multiple components working in conjunction behave reliably and deliver the expected result.        | T9    |                       |
 | FR 14   | The application must support raw signal data to be uploaded for processing by an end user, and not just rely on pre-generated examples.        | T3      |                       |
 | NFR 15   | The web application will be easy to use for users        | T8     |                       |
 | NFR 16  | The application must have predefined signal types, which the user can choose from through a drop-down list        | T6      |                       |
@@ -582,9 +570,8 @@ The table below outlines how the reponsiblities in the team are distributed usin
 | NFR 18   |Allow users to save Data visualisations        | .      |                       |
 | NFR 19   | The web application will have no back-end, all of the functionality will be implemented on the front-end       | .     |                       |
 | NFR 20   | The application will have very low or no latency since there is no back-end delays        | .     |                       |
-| NFR 21   | The application will allow different kinds of data input by the user. It will support data in formats such as csv        | .      |                       |
-| NFR 22   | The application will be secure, having security measures in place to disable any attacks on the functionality of the application        |.     |                       |
-| NFR 23   | The application will be efficent with the usage of the memory, to allow smooth animations of the data visualitsation and avoid memory problems        |.     |                       |
-| NFR 24   | The web application will be compatibility across multiple platforms (FireFox, Chrome)       | .    |                       |
-| NFR 25   | The web application will be able to handle stress, it will be stress tested to prevent any glitching or any unexpected events to  occur        | .      |                       |
+| NFR 21   | The application will allow different kinds of data input by the user. It will support data in formats such as CSV        | T5      |                       |
+| NFR 22   | The application will be efficent with the usage of the memory, to allow smooth animations of the data visualitsation and avoid memory problems        |T7     |                       |
+| NFR 23   | The web application will be compatibility across multiple platforms (FireFox, Chrome)       | T8    |                       |
+| NFR 24   | The web application will be able to handle stress, it will be stress tested to prevent any glitching or any unexpected events to  occur        | T9      |                       |
 # Appendix
