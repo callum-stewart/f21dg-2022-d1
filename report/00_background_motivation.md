@@ -72,7 +72,7 @@ The sifting procedure to extract these IMFs can be described by the following st
 	1. Interpolate the maxima with a cubic spline in order to define the upper envelope
 	1. Calculate the mean $`m_{i(k-1)}`$ of the upper and lower envelopes of $`h_{i(k-1)}`$. The envelope defined by the two cubic splines should contain all data.
 	1. Set $`h_{ik} = h_{i(k-1)} - m_{i(k-1)}`$
-	1. Is $`h{(ik}`$ an IMF?
+	1. Is $`h_{(ik}`$ an IMF?
 		- If true, set $`c_i = h_{ik}`$ and break
 		- Else increment $`k`$ and continue inner loop
 1. Set the remainder $`r_{i+1} = r_i - C_i`$
