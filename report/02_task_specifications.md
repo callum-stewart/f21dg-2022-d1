@@ -191,7 +191,7 @@ Steps for Completion
 #### Time Required (Estimate): 4
 #### Depends on: All
 #### Description:
- After developing a project its very important to have a presentation for the users that can watch it and understand the full functionality of the application. After the acompletion of this web application, all the members of the team will  make a seminal style project demonstration. The steps involved in creating the demo are listed as follows:
+ After developing a project its very important to have a presentation for the users that can watch it and understand the full functionality of the application. After the completion of this web application, all the members of the team will  make a seminar style project demonstration and a presentation. The steps involved in creating the demo are listed as follows:
 
 Steps for Demonstration:
 1. Each individual responsible for a piece of functionality they have been working on will capture a short screen recording of the working functionality they have developed.
