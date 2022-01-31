@@ -56,8 +56,8 @@ Here we can see the strength of each constituent signal by colour intensity.
 Unlike previously with the FFT, we now have temporal information, and can see when signals of a given frequency begin and end in the complex signal.
 
 However there is a significant limitation to building on top of Fourier transforms due to an uncertainty limit called the Gabor limit.
-By making the time resolution smaller (i.e., by dividing the main signal into smaller windows) we become more certain of when frequencies change, but we loose frequency resolution (the ability to see frequency components close together).
-By making the time resolutions larger, we loose time resolution (the ability to know precisely when a frequency changes), but we get better frequency resolution.
+By making the time resolution smaller (i.e., by dividing the main signal into smaller windows) we become more certain of when frequencies change, but we lose frequency resolution (the ability to see frequency components close together).
+By making the time resolutions larger, we lose time resolution (the ability to know precisely when a frequency changes), but we get better frequency resolution.
 
 ### Hilbert-Huang Transform and Empirical Mode Decomposition
 
@@ -130,7 +130,12 @@ Of course, EMD has weaknesses as well, for example:
 1. Mode mixing sometimes occurs between IMFs, where a single IMF includes oscillatory modes that are drastically different or a component of a different IMF all together.
 
 In conclusion, each time-frequency analysis technique has draw backs and advantages, and neither one is conclusively the correct one to use in any given situation.
+This being said, for analysing non-stationary signals EMD has some obvious advantages compared to STFT and can be considered superior in most cases [^fn4].
 
 [^fn1]: Lei, Yaguo, et al. "A review on empirical mode decomposition in fault diagnosis of rotating machinery." *Mechanical systems and signal processing 35.1-2* (2013): 108-126. 
 [^fn2]: Photograph by Geir Kulia and modified by Matt Hall, distributed under a Creative Commons Attribution-ShareAlike 4.0 license.
 [^fn3]: Example adapted from the Jupyter Notebook tutorials created by the developers of Python's `emd` library, available [here](https://emd.readthedocs.io/en/stable/_downloads/e47aacca40568b7bb056bd96535966c4/emd_tutorials_jupyter.zip)
+
+[^fn4]: Arun Raj P.D., Mr. Venkatesh S., "Time-Frequency Analysis methods: A Comparative study", International Research Journal of Engineering and Technology (IRJET),Volume 3, Issue 6, June 2016, e-ISSN: 2395-0056.
+
+
