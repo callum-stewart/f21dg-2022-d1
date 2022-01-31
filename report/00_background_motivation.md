@@ -62,7 +62,7 @@ By making the time resolutions larger, we loose time resolution (the ability to 
 ### Hilbert-Huang Transform and Empirical Mode Decomposition
 
 The Hilbert-Huang Transform (HHT) is a powerful time-frequency analysis technique.
-It allows an analyst to decompose a complex signal into a number of orthogonal Intrinsic Mode Frequencies (IMFs) along with a trend and information regarding instantaneous frequency.
+It allows an analyst to decompose a complex signal into a number of orthogonal Intrinsic Mode Frequencies (IMFs) with a trend using EMD and applies Hilbert Spectral Analysis (HSA) to the IMFs to obtain information regarding instantaneous frequency.
 
 HHT first utilises empirical mode decomposition (EMD) in order to break a complex waveform into IMFs representing simple oscillatory modes through a process called sifting.
 The amplitude and frequency of an IMF may vary with time, and must satisfy both of these rules:
@@ -112,6 +112,7 @@ There are other stopping criterion that may be used however, such as S Number Cr
 Below we can see an example of EMD being performed on a complex signal, breaking it down into its constituent modes in descending frequency order[^fn3].
 
 ![An example of EMD being performed on a signal](img/emd_example.png)
+
 
 At this point, if desired, the instantaneous frequency spectrum can be obtained by applying the Hilbert transform on the constituent IMFs.
 The final result would be called a Hilbert spectrum, where the amplitude and instantaneous frequency can be plotted as functions of time on a three dimensional plot.
