@@ -191,8 +191,8 @@ Both the functional and constraint requirements have been ordered according to t
 ### Flexibility
 | Requirement Number | Description                                                                                                                                                                                                                                   | MoSCoW Prioritization |
 |--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------|
-| NFR 3-1             | The web application will be compatibility across multiple platforms (FireFox, Chrome) | Could Have             |
-| NFR 3-2             | The web application will be able to handle stress, it will be stress tested to prevent any glitching or any unexpected events to  occur | Could Have             |
+| NFR 3-1             | The web application will be compatibility across multiple platforms (FireFox, Chrome). | Could Have             |
+| NFR 3-2             | The web application will be able to handle stress, it will be stress tested to prevent any glitching or any unexpected events to  occur. | Could Have             |
 | NFR 3-3             | The application will not be tested or designed for use on Mobile devices. | Will Not Have             |                      
 # Task Specifications
 > NB: In an effort to reduce repeated task requirements, the project will emphasise the importance of the 'Ownership' philosophy, in that the developer who constructs a component is the SME (Subject Matter Expert) of that component, and hence will be best suited for bug-fixing and unit-testing that component. This replaces an explicit 'Unit Testing' task specification, whereby only 1 person in the project would be held accountable for testing components they may not be familiar with. 
@@ -450,8 +450,6 @@ The final table 'Completed Actions' is used to keep a record of what actions hav
 |The timing of the planned work not being accurate|Low|Medium|If during development there are clear misjudgments of the time taken to complete a task we will adjust the time for the tasks that have not yet been finished to create a clearer image of how long the tasks will take.|
 
 
-### TODO -- add more some general risks
-
 ## Technical Risks
 | Risk Number | Risk Description | Severity | Chance Of Occuring | Mitigation Plan|
 |:---:|---|:---:|:---:|-----|
@@ -531,57 +529,60 @@ Following the above theory, the following plan is created:
 * Development of the tutorial can begin once the graphing system alongside frontend interface are near completion.
 
 Due to the nature of the Python modules, unit testing will be able to be performed on each component individually, alongside following the plan above will aid with knowing when each part of the system can join as part of the system integration tests.# Gantt Chart
+![Whole Project Gantt Chart](img/GanttChartFinal.PNG)
+
+
+Note.  
+- "* <-" denotes that this task is dependant on all other tasks
+- "-> *" denotes that all tasks are dependent on this task
 # Table of Responsiblities
 The table below outlines how the reponsiblities in the team are distributed using the RACI model with the acronyms being explained in the key below. 
 
 |Acronym|Role|Description|
 |:---:|---|:---:|
 |R|Responsible|Team members who work to complete the task.|
-|A|Accountable|Task leader i.e. the one answerable for the completion of the task|
-|C|Consulted|Team members who should be contacted and dicuss matters relating to the task|
-|I|Informed|Team members who should be informed of task progress usually on completion of a task|
-
-*no task leader identified yet
+|A|Accountable|Task leader i.e. the one answerable for the completion of the task.|
+|C|Consulted|Team members who should be contacted and dicuss matters relating to the task.|
+|I|Informed|Team members who should be informed of task progress usually on completion of a task.|
 
 |Task Number|Task Description|Bruce|Callum|Saad|Sebastian|Abigail|Daniel|
 |:---:|---|:---:|:---:|---|:---:|---|:---:|
-|T1|Source and adopt existing STFT analysis algorithm|C|A|I|I|I|C|
-|T2|Identify & Adopt EMD Algorithm for Signal Analysis|C|A|I|I|I|C|
-|T3|Identify library and build interface to integrate existing Python code in browser|A|C|I|I|C|C|
-|T4|Project Management & Documentation|I|I|C|I|C|A|
-|T5|File I/O|I|I|I|I|I|A|
-|T6|Creation of custom input signals*|C|C|I|I|C|I|
-|T7|Display of individual signals and STFT / EMD analysis|A|C|I|I|C|C|
-|T8|Design and implementation of User-Interface|C|C|I|I|A|C|
-|T9|Unit Testing*|C|C|C|C|C|C|
-|T10|Integration Testing*|C|C|C|C|C|C|
-|T11|Creation of a Tutorial|C|C|C|C|A,R|C|
-|T12|Continuous Risk Management*|C,R|C,R|C,R|C,R|C,R|C,R|
-|T13|Demo Presentation|C,R|C,R|A,R|C,R|C,R|C,R|
-|T14|Creation of the design manual*|C|C|I|I|C|C|
+|T1|Source and adopt existing STFT analysis algorithm|C|A|C|I|I|C|
+|T2|Identify & Adopt EMD Algorithm for Signal Analysis|C|A|C|I|I|C|
+|T3|Identify library and build interface to integrate existing Python code in browser|A|C|I|R|C|C|
+|T4|Project Management & Documentation|I|R|C|I|R|A|
+|T5|File I/O|C|I|I|I|C|A|
+|T6|Creation of custom input signals|A|C|R|I|C|I|
+|T7|Display of individual signals and STFT / EMD analysis|R|C|A|I|C|C|
+|T8|Design and implementation of User-Interface|C|C|C|I|A|C|
+|T9|Integration Testing|C|C|C|A|C|C|
+|T10|Creation of a Tutorial|I|A|C|C|R|I|
+|T11|Continuous Risk Management|C,R|C,R|C,R|C,R|C,R|A|
+|T12|Demo Presentation|C,R|C,R|A,R|C,R|C,R|C,R|
+|T13|Creation of the design manual|C|C|I|I|C|A|
 # Requirements Traceability Matrix 
-| ID      | Requirement Description | Task ID     | Progress  |
-| :---        |    :----:   |          ---: |            ---:       |
-|FR-1-1    | The application must support Short-Time Fourier Transform (STFT) time series analysis on input signal data.       | T1   |                       |
-| FR-1-2   | The application must support Empirical Mode Decomposition (EMD) time series analysis on input signal data and export the resultant IMFs for use in other components of the application. |      T2                 |
+| ID      | Requirement Description |  Task ID     | 
+| :---        |    :----:   |          ---: |            
+|FR-1-1    | The application must support Short-Time Fourier Transform (STFT) time series analysis on input signal data.       | T1                          
+| FR-1-2   | The application must support Empirical Mode Decomposition (EMD) time series analysis on input signal data and export the resultant IMFs for use in other components of the application. |      T2                 
 | FR-1-3   |    The application must support the deconstruction of given, identifiable signal data into its respective functional components. I.e. Deconstruct periodical sinusoidal signal data via STFT and display its extracted frequencies in a spectragram.        | T2      |                       |
-| FR-2-1   | The application must plot the output of a signal analysis request (STFT, EMD) on given input data visually in a graph embedded in the webpage.       | T6      |                       |
-| FR-2-2    | The application must support simultaneously displaying the original, unaltered signal data and the extracted components on a common time base (i.e. over a period of 10 seconds) in a graph embedded in the webpage.        | T7     |                       |
-| FR-2-3    |  The application must support simultaneously displaying the instantaneous frequencies of the original components alongside the IMF and STFT estimates in a graph embedded in the webpage.       | T7      |                       |
-| FR-2-4    |   The application must support 'bookmarking' functionality; allowing users to share their configurations and parameters for signal analysis.      | T7      |                       |
-| FR-2-5    |   The application must explain the advantages and disadvantages between STFT and EMD signal analysis.      | T8      |                       |
-| FR-2-6    |  The application should display animations showcasing the differences in techniques and behaviours between EMD and STFT analysis.     | T11      |                       |
-| FR-2-7    |  The application should allow the user to generate custom signal data from a set of pre-defined types for processing.     | T11      |                       |
-| FR 3-1   | The application must be extensively tested via unit and integration testing to verify individual components behave predictably and correctly, and multiple components working in conjunction behave reliably and deliver the expected result.        | T9      |                       |
-| FR 3-2   | The application must support raw signal data to be uploaded for processing by an end user, and not just rely on pre-generated examples.        | T8     |                       |                      
-| NFR 1-1   | The web application will be easy to use for users.        | T8     |                       |
-| NFR 1-2  | The application must have predefined signal types, which the user can choose from through a drop-down list.        | T6      |                       |
-| NFR 1-3  | The web application will have an online tutorial embedded for the users to see and learn about the advantages and disadvantages of EMD and STFT.        | T10     |                       |
-| NFR 1-4  |Allow users to save data visualisations.        | T8      |                       |
+| FR-2-1   | The application must plot the output of a signal analysis request (STFT, EMD) on given input data visually in a graph embedded in the webpage.       | T7                             
+| FR-2-2    | The application must support simultaneously displaying the original, unaltered signal data and the extracted components on a common time base (i.e. over a period of 10 seconds) in a graph embedded in the webpage.        | T7                            
+| FR-2-3    |  The application must support simultaneously displaying the instantaneous frequencies of the original components alongside the IMF and STFT estimates in a graph embedded in the webpage.       | T7                             
+| FR-2-4    |   The application must support 'bookmarking' functionality; allowing users to share their configurations and parameters for signal analysis.      | T8                             
+| FR-2-5    |   The application must explain the advantages and disadvantages between STFT and EMD signal analysis.      | T10      |                       
+| FR-2-6    |  The application should display animations showcasing the differences in techniques and behaviours between EMD and STFT analysis.     | T10      |                       
+| FR-2-7    |  The application should allow the user to generate custom signal data from a set of pre-defined types for processing.     | T6     |                       
+| FR -3-1   | The application must be extensively tested via unit and integration testing to verify individual components behave predictably and correctly, and multiple components working in conjunction behave reliably and deliver the expected result.        | T9      |                       
+| FR -3-2   | The application must support raw signal data to be uploaded for processing by an end user, and not just rely on pre-generated examples.        | T5                                                  
+| NFR 1-1   | The web application will be easy to use for users.        | T8     |                       
+| NFR 1-2  | The application must have predefined signal types, which the user can choose from through a drop-down list.        | T6      |                       
+| NFR 1-3  | The web application will have an online tutorial embedded for the users to see and learn about the advantages and disadvantages of EMD and STFT.        | T10     |                       
+| NFR 1-4  |Allow users to save data visualisations.        | T8      |                       
 | NFR 2-1  | The web application will have no back-end, all of the functionality will be implemented on the front-end.       | T3     |                       |
-| NFR 2-1  | The application will have low latency, the application will be effiecient in regards to the overhead of the data visualisation.        | T7     |                       |
-| NFR 2-1   | The application will allow different kinds of data input by the user. It will support data in formats such as CSV.        | T5      |                       |
-| NFR 2-1   | The application will be efficent with the usage of the memory, to allow smooth animations of the data visualisation and avoid memory problems.        |T7     |                       |
-| NFR 3-1   | The web application will be compatibility across multiple platforms (FireFox, Chrome).       | T8    |                       |
-| NFR 3-2   | The web application will be able to handle stress, it will be stress tested to prevent any glitching or any unexpected events to  occur.        | T9      |                       |
-| NFR 3-3   | The application will not be tested or designed for use on Mobile devices.        | T9      |                       |# Appendix
+| NFR 2-1  | The application will have low latency, the application will be effiecient in regards to the overhead of the data visualisation.        | T7    |                       
+| NFR 2-1   | The application will allow different kinds of data input by the user. It will support data in formats such as CSV.        | T5      |                       
+| NFR 2-1   | The application will be efficent with the usage of the memory, to allow smooth animations of the data visualisation and avoid memory problems.        |T7                         
+| NFR 3-1   | The web application will be compatibility across multiple platforms (FireFox, Chrome).       | T8    |                       
+| NFR 3-2   | The web application will be able to handle stress, it will be stress tested to prevent any glitching or any unexpected events to  occur.        | T9                             
+| NFR 3-3   | The application will not be tested or designed for use on Mobile devices.        | T8                             # Appendix
