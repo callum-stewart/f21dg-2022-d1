@@ -132,7 +132,6 @@ A framework for completing this task is outlined below:
 
 ![Graph shown with pan and zoom controls](img/STFT_upload.PNG)
 
-
 ## T8: Design and implementation of User-Interface
 #### Member Responsible: Abigail Rivera
 #### Time Required (Estimate): 20 hours
@@ -148,16 +147,12 @@ Steps for Completion:
 5. Ensure all class and id names follow the same convention and are consistent with other parts of the application. 
 
 ![EMD approach applied to user configured combined signal by product](img/EMD_multiple_product_signal.PNG)
-Figure X. EMD approach applied to user configured combined signal by product
 
 ![EMD approach applied to user configured combined signal by sum](img/EMD_multiple_sum_signal.PNG)
-Figure X. EMD approach applied to user configured combined signal by sum
 
 ![Loading overlay triggered with changes in signal or method chosen](img/Loading_graphs.PNG)
-Figure X. Loading overlay triggered with changes in signal or method chosen
 
 ![STFT approach applied to uploaded signal](img/STFT_upload.PNG)
-Figure X. STFT approach applied to uploaded signal
 
 ## T9: Integration Testing
 #### Member Responsible: Sebastian
