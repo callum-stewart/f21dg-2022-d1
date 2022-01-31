@@ -295,8 +295,6 @@ The following pseudocode demonstrates a user interaction with the system and dem
 
 ![User configured signal settings](img/configure_settings.PNG)
 
-![Uploaded signal settings](img/upload_settings.PNG)
-
 ## T7: Display of individual signals and STFT / EMD analysis
 #### Member Responsible: Saad Badshah
 #### Time Required (Estimate): 20 hours
@@ -319,14 +317,14 @@ A framework for completing this task is outlined below:
 ## T8: Design and implementation of User-Interface
 #### Member Responsible: Abigail Rivera
 #### Time Required (Estimate): 20 hours
-#### Depends on: T3, T6, 
+#### Depends on: T3, T6
 #### Description:
-A clear consistent user interface (UI) is integral to the fulfilment of the specification as the main use of this web application is educating students with no prior knowledge of the subject matter i.e. Time series decomposition and allowing them to experiment with both methods. Within this task the focus should be around the usefulness and effectiveness of the UI and navigation through the application as an educational tool. All controls, settings and access to graphs should be intuitive to use. 
+A clear consistent user interface (UI) is integral to the fulfilment of the specification as the main use of this web application is educating students with no prior knowledge of the subject matter i.e. Time series decomposition and allowing them to experiment with both methods. Within this task the focus should be around the usefulness and effectiveness of the UI and navigation through the application as an educational tool. All controls, settings and access to graphs should be intuitive to use.
 
-Steps for Completion
-1. Test wireframes designed and ensure they are possible to create within the chosen frontend technologies. Ensure frontend implementation will work well with chosen implementations for graphing animations, processing methods and signal manipu
+Steps for Completion:
+1. Test wireframes designed and ensure they are possible to create within the chosen frontend technologies. Ensure frontend implementation will work well with chosen implementations for graphing animations, processing methods and signal manipulation.
 2. Build a base frontend interface for both EMD and STFT methods based on wireframe designs, leaving placeholder sections for the generated graphs. 
-3. Communicate with task leads on implementing the EMD, STFT methods as well as input signal manipulation for more detailed setting specifications and include this within the wireframe
+3. Communicate with task leads on implementing the EMD, STFT methods as well as input signal manipulation for more detailed setting specifications and include this within the wireframe.
 4. Implement bookmarking functionality by adding flags onto URL which will allow the user to share their configuration.
 5. Ensure all class and id names follow the same convention and are consistent with other parts of the application. 
 
@@ -342,21 +340,7 @@ Figure X. Loading overlay triggered with changes in signal or method chosen
 ![STFT approach applied to uploaded signal](img/STFT_upload.PNG)
 Figure X. STFT approach applied to uploaded signal
 
-
-## T9: Unit Testing
-#### Member Responsible: ?
-#### Time Required (Estimate): 50 hours
-#### Depends on: All
-#### Description:
-All completed software modules are to be subjected to unit testing to isolate bugs in each module and prevent whole application failure. 
-
-Steps for completion:
-1. Identify methodology or framework to be used for unit testing, coordinate with head of integration testing to ensure this is appropriate. 
-2. Iteratively include all modules as they are completed and updated into the unit testing suites and provide feedback in a timely manner to the team with any failures identified and possible solutions if applicable.
-3. Once modules have been tested include this with evidence in the the test report. 
-4. Test all system validation with likely use cases and record within the test report. 
-
-## T10: Integration Testing
+## T9: Integration Testing
 #### Member Responsible: ?
 #### Time Required (Estimate): 10 hours
 #### Depends on: All
@@ -367,28 +351,28 @@ Steps for completion:
 1. Identify methodology or framework to be used for integration testing, ensure this is compatible with unit testing process. 
 2. Iteratively include all modules as they are completed and updated into the integration testing and provide feedback in a timely manner to the team with any failures identified and possible solutions if applicable.
 
-## T11: Creation of a Tutorial
-#### Member Responsible: Abigail Rivera
+## T10: Creation of a Tutorial
+#### Member Responsible: Callum Stewart
 #### Time Required (Estimate): 20 hours
 #### Depends on: T7, T8
 #### Description:
-A tutorial supplemented by the use of designed web app is crucial to fulfilling deliverable 3. This will involve writing a clear and concise technical article geared toward an audience with a CS background and no prior knowledge of EMD or STFT. The main objective of this task is to allow the user to learn about both methods namely their advantages and disadvantages in order to compare the approaches.
+A tutorial supplemented by the use of designed web app is crucial to fulfilling Deliverable 3. This will involve writing a clear and concise technical article geared toward an audience with a CS background and no prior knowledge of EMD or STFT. The main objective of this task is to allow the user to learn about both methods namely their advantages and disadvantages in order to compare the approaches.
 
 Steps for Completion
-1. Gather useful external materials (peer-reviewed papers, video links) that can be linked within the tutorial paper when gaining a thorough understanding of each method.
-2. Create a short introduction explaining the methods and steps taken to implement each method, although these should also be available in the application itself
+1. Gather useful external materials (peer-reviewed papers, video links) that may be linked within the tutorial paper when gaining a thorough understanding of each method.
+2. Create a brief introduction explaining the methods and steps taken to implement each method, although these should also be available in the application itself.
 3. Collate main advantages and disadvantages of these methods in order to create examples to demonstrate and highlight these. 
-4. Outline a guide with screenshots and descriptions to using the application including importing signals,combining signals, configuring method settings, applying each method, navigating different graphs produced, overlaying graphs on same time axis and bookmarking. 
+4. Outline a guide with screenshots and descriptions to using the application including importing signals, combining signals, configuring method settings, applying each method, navigating different graphs produced, overlaying graphs on same time axis and bookmarking. 
 5. Create tasks to work through that demonstrate the various advantages and disadvantages of each method using various different signal types.
 
-## T12: Continuous Risk Management
+## T11: Continuous Risk Management
 #### Member Responsible: ?
 #### Time Required (Estimate): ?
 #### Depends on: All
 #### Description:
 Managing risk within this project will be handled through an iterative proccess of identifying, preventing and mitigating any known risks. This will be done each week to ensure all critical failures are avoided or mitigated early on. Through the D1 deliverable a risk table has been created with existing risks and will be updated by the task leader with feedback from the rest of the group when required. 
 
-## T13: Demo Presentation
+## T12: Demo Presentation
 #### Member Responsible: Saad?
 #### Time Required (Estimate): 4 hours
 #### Depends on: All
@@ -402,7 +386,7 @@ Steps for Demonstration:
 4. Future improvements section should be included which discusses the future functionality that can be added to the application to make it more efficent and even perform more detailed analysis and any future functionality that we might want to add.
 5. In the end a conclusion section should be included which discussed the key take aways from this project.
 
-## T14: Creation of the design manual
+## T13: Creation of the design manual
 #### Member Responsible: -
 #### Time Required (Estimate): 5 hours
 #### Depends on: All
