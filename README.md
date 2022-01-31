@@ -402,7 +402,7 @@ Steps for Demonstration:
 4. Future improvements section should be included which discusses the future functionality that can be added to the application to make it more efficent and even perform more detailed analysis and any future functionality that we might want to add.
 5. In the end a conclusion section should be included which discussed the key take aways from this project.
 
-## T13: Creation of the design manual
+## T14: Creation of the design manual
 #### Member Responsible: -
 #### Time Required (Estimate): 5 hours
 #### Depends on: All
