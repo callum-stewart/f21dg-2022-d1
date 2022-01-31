@@ -46,9 +46,10 @@
 \PassOptionsToPackage{dvipsnames,svgnames*,x11names*,table}{xcolor}
 %
 \documentclass[
+  english,
   paper=a4,
-  ,captions=tableheading
-]{scrartcl}
+  oneside  ,captions=tableheading
+]{scrbook}
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
 \usepackage{setspace}
@@ -88,6 +89,9 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
+  pdftitle={Project Requirements, Plan and Task Definitions},
+  pdfauthor={Callum Stewart; Saad Badshah; Abigail Rivera; Daniel Scott; Bruce Wilson; Sebastian Zebrowski},
+  pdflang={en},
   hidelinks,
   breaklinks=true,
   pdfcreator={LaTeX via pandoc with the Eisvogel template}}
@@ -133,12 +137,33 @@
 \usepackage{float}
 \floatplacement{figure}{H}
 
+\ifxetex
+    % See issue https://github.com/reutenauer/polyglossia/issues/127
+  \renewcommand*\familydefault{\sfdefault}
+    % Load polyglossia as late as possible: uses bidi with RTL langages (e.g. Hebrew, Arabic)
+  \usepackage{polyglossia}
+  \setmainlanguage[]{}
+\else
+  \usepackage[main=english]{babel}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\fi
 \ifluatex
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
 
-\author{}
-\date{}
+\title{Project Requirements, Plan and Task Definitions}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Deliverable 1 Report}
+\author{Callum Stewart \and Saad Badshah \and Abigail Rivera \and Daniel
+Scott \and Bruce Wilson \and Sebastian Zebrowski}
+\date{2021-01-31}
 
 
 
@@ -152,24 +177,14 @@
 % If no language is specified, use English as the default main document language.
 %
 
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
-  \usepackage[shorthands=off,main=english]{babel}
-\else
-    % Workaround for bug in Polyglossia that breaks `\familydefault` when `\setmainlanguage` is used.
-  % See https://github.com/Wandmalfarbe/pandoc-latex-template/issues/8
-  % See https://github.com/reutenauer/polyglossia/issues/186
-  % See https://github.com/reutenauer/polyglossia/issues/127
-  \renewcommand*\familydefault{\sfdefault}
-    % load polyglossia as late as possible as it *could* call bidi if RTL lang (e.g. Hebrew or Arabic)
-  \usepackage{polyglossia}
-  \setmainlanguage[]{english}
-\fi
-
 
 
 %
 % for the background color of the title page
 %
+\usepackage{pagecolor}
+\usepackage{afterpage}
+\usepackage[margin=2.5cm,includehead=true,includefoot=true,centering]{geometry}
 
 %
 % break urls
@@ -246,9 +261,10 @@
 % variables for title, author and date
 %
 \usepackage{titling}
-\title{}
-\author{}
-\date{}
+\title{Project Requirements, Plan and Task Definitions}
+\author{Callum Stewart, Saad Badshah, Abigail Rivera, Daniel
+Scott, Bruce Wilson, Sebastian Zebrowski}
+\date{2021-01-31}
 
 %
 % tables
@@ -297,7 +313,7 @@
   xleftmargin      = 2.7em,
   framexleftmargin = 2.5em,
   backgroundcolor  = \color{listing-background},
-  basicstyle       = \color{listing-text-color}\linespread{1.0}\small\ttfamily{},
+  basicstyle       = \color{listing-text-color}\linespread{1.0}\scriptsize\ttfamily{},
   breaklines       = true,
   frame            = single,
   framesep         = 0.19em,
@@ -395,12 +411,14 @@
 \fancypagestyle{eisvogel-header-footer}{
   \fancyhead{}
   \fancyfoot{}
-  \lhead[]{}
+  \lhead[2021-01-31]{Project Requirements, Plan and Task Definitions}
   \chead[]{}
-  \rhead[]{}
-  \lfoot[\thepage]{}
+  \rhead[Project Requirements, Plan and Task Definitions]{2021-01-31}
+  \lfoot[\thepage]{Callum Stewart, Saad Badshah, Abigail Rivera, Daniel
+Scott, Bruce Wilson, Sebastian Zebrowski}
   \cfoot[]{}
-  \rfoot[]{\thepage}
+  \rfoot[Callum Stewart, Saad Badshah, Abigail Rivera, Daniel
+Scott, Bruce Wilson, Sebastian Zebrowski]{\thepage}
   \renewcommand{\headrulewidth}{0.4pt}
   \renewcommand{\footrulewidth}{0.4pt}
 }
@@ -415,10 +433,42 @@
 %%
 %% begin titlepage
 %%
+\begin{titlepage}
+\newgeometry{left=6cm}
+\definecolor{titlepage-color}{HTML}{483D8B}
+\newpagecolor{titlepage-color}\afterpage{\restorepagecolor}
+\newcommand{\colorRule}[3][black]{\textcolor[HTML]{#1}{\rule{#2}{#3}}}
+\begin{flushleft}
+\noindent
+\\[-1em]
+\color[HTML]{FFFAFA}
+\makebox[0pt][l]{\colorRule[FFFAFA]{1.3\textwidth}{2pt}}
+\par
+\noindent
+
+{
+  \setstretch{1.4}
+  \vfill
+  \noindent {\huge \textbf{\textsf{Project Requirements, Plan and Task
+Definitions}}}
+    \vskip 1em
+  {\Large \textsf{Deliverable 1 Report}}
+    \vskip 2em
+  \noindent {\Large \textsf{Callum Stewart, Saad Badshah, Abigail
+Rivera, Daniel Scott, Bruce Wilson, Sebastian Zebrowski}}
+  \vfill
+}
+
+
+\textsf{2021-01-31}
+\end{flushleft}
+\end{titlepage}
+\restoregeometry
 
 %%
 %% end titlepage
 %%
+
 
 \tableofcontents
 \newpage

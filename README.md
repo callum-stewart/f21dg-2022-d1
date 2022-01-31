@@ -1,3 +1,18 @@
+---
+title: "Project Requirements, Plan and Task Definitions"
+author: ["Callum Stewart", "Saad Badshah", "Abigail Rivera", "Daniel Scott", "Bruce Wilson", "Sebastian Zebrowski"]
+date: "2021-01-31"
+subtitle: "Deliverable 1 Report"
+lang: "en"
+titlepage: true
+titlepage-color: "483D8B"
+titlepage-text-color: "FFFAFA"
+titlepage-rule-color: "FFFAFA"
+titlepage-rule-height: 2
+book: true
+classoption: oneside
+code-block-font-size: \scriptsize
+---
 # Background and Motivation
 ## Motivation
 In this project we are seeking to create an educational tool that can be used to interactively explore the differences between two approaches to time series analysis of non-stationary signals. 
