@@ -107,6 +107,8 @@ For each point in time, the difference between the current component and the pre
 SD_{k}=\sum _{{t=0}}^{{T}}{\frac  {|h_{{k-1}}(t)-h_{k}(t)|^{2}}{h_{{k-1}}^{2}(t)}}
 ```
 
+Once this value falls below a predetermined threshold, the sifting process can be stopped.
+
 There are other stopping criterion that may be used however, such as S Number Criterion or Energy Difference Tracking.
 
 Below we can see an example of EMD being performed on a complex signal, breaking it down into its constituent modes in descending frequency order[^fn3].
