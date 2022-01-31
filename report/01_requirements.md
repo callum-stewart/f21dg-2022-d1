@@ -50,6 +50,6 @@ Both the functional and constraint requirements have been ordered according to t
 ### Flexibility
 | Requirement Number | Description                                                                                                                                                                                                                                   | MoSCoW Prioritization |
 |--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------|
-| NFR 3-1             | The web application will be compatibility across multiple platforms (FireFox, Chrome) | Could Have             |
-| NFR 3-2             | The web application will be able to handle stress, it will be stress tested to prevent any glitching or any unexpected events to  occur | Could Have             |
+| NFR 3-1             | The web application will be compatibility across multiple platforms (FireFox, Chrome). | Could Have             |
+| NFR 3-2             | The web application will be able to handle stress, it will be stress tested to prevent any glitching or any unexpected events to  occur. | Could Have             |
 | NFR 3-3             | The application will not be tested or designed for use on Mobile devices. | Will Not Have             |                      
