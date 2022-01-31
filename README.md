@@ -62,7 +62,7 @@ By making the time resolutions larger, we loose time resolution (the ability to 
 ### Hilbert-Huang Transform and Empirical Mode Decomposition
 
 The Hilbert-Huang Transform (HHT) is a powerful time-frequency analysis technique.
-It allows an analyst to decompose a complex signal into a number of orthogonal Intrinsic Mode Frequencies (IMFs) along with a trend and information regarding instantaneous frequency.
+It allows an analyst to decompose a complex signal into a number of orthogonal Intrinsic Mode Frequencies (IMFs) with a trend using EMD and applies Hilbert Spectral Analysis (HSA) to the IMFs to obtain information regarding instantaneous frequency.
 
 HHT first utilises empirical mode decomposition (EMD) in order to break a complex waveform into IMFs representing simple oscillatory modes through a process called sifting.
 The amplitude and frequency of an IMF may vary with time, and must satisfy both of these rules:
@@ -112,6 +112,7 @@ There are other stopping criterion that may be used however, such as S Number Cr
 Below we can see an example of EMD being performed on a complex signal, breaking it down into its constituent modes in descending frequency order[^fn3].
 
 ![An example of EMD being performed on a signal](img/emd_example.png)
+
 
 At this point, if desired, the instantaneous frequency spectrum can be obtained by applying the Hilbert transform on the constituent IMFs.
 The final result would be called a Hilbert spectrum, where the amplitude and instantaneous frequency can be plotted as functions of time on a three dimensional plot.
@@ -376,10 +377,18 @@ Steps for Completion
 #### Description:
 
 ## T13: Demo Presentation
-#### Member Responsible: ?
-#### Time Required (Estimate): ? hours
+#### Member Responsible: All
+#### Time Required (Estimate): 4
 #### Depends on: All
 #### Description:
+ After developing a project its very important to have a presentation for the users that can watch it and understand the full functionality of the application. After the completion of this web application, all the members of the team will  make a seminar style project demonstration and a presentation. The steps involved in creating the demo are listed as follows:
+
+Steps for Demonstration:
+1. Each individual responsible for a piece of functionality they have been working on will capture a short screen recording of the working functionality they have developed.
+2. The team should then make a powerpoint presentation which includes slides on introduction to the project, The background information, Archetecture of the application, Justification for the technologies used in development and the must have functional requirements, and the planning process which went behind the decisions made to implement the key functionality. Class diagrams flow charts etc can be added to explain the archetecture in more detail.
+3. The tasks that were assigned will be discussed by each individual that was responsible for the task, the screen recording captured in step 1 should be played and the person who developed it should discuss it in further detail going in detail about how the flow of the functionality works.
+4. Future improvements section should be included which discusses the future functionality that can be added to the application to make it more efficent and even perform more detailed analysis and any future functionality that we might want to add.
+5. In the end a conclusion section should be included which discussed the key take aways from this project
 # Techincal Risk Analysis
 ## Risk Table
 | Risk Number | Risk Description | Severity | Chance Of Occuring |
