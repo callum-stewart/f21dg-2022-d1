@@ -179,7 +179,7 @@ Both the functional and constraint requirements have been ordered according to t
 | Requirement Number | Description                                                                                                                                                                                                                                   | MoSCoW Prioritization |
 |--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------|
 | NFR 2-1             | The web application will have no back-end, all of the functionality will be implemented on the front-end. | Must Have             |
-| NFR 2-2             | The application will have very low or no latency since there is no back-end delays. | Could Have             |  
+| NFR 2-2             | The application will have low latency, the application will be effiecient in regards to the overhead of the data visualisation. | Could Have             |  
 | NFR 2-3             | The application will allow different kinds of data input by the user. It will support data in formats such as CSV.| Could Have             |  
 | NFR 2-4             | The application will be efficent with the usage of the memory, to allow smooth animations of the data visualitsation and avoid memory problems. | Should Have             |  
 
@@ -380,7 +380,7 @@ After developing a project its very important to have a presentation for the use
 
 Steps for Demonstration:
 1. Each individual responsible for a piece of functionality they have been working on will capture a short screen recording of the working functionality they have developed.
-2. The team should then make a powerpoint presentation which includes slides on introduction to the project, The background information, Archetecture of the application, Justification for the technologies used in development and the must have functional requirements, and the planning process which went behind the decisions made to implement the key functionality. Class diagrams flow charts etc can be added to explain the archetecture in more detail.
+2. The team should then make a powerpoint presentation which includes slides on introduction to the project, The background information, architecture of the application, Justification for the technologies used in development and the must have functional requirements, and the planning process which went behind the decisions made to implement the key functionality. Class diagrams flow charts etc can be added to explain the architecture in more detail.
 3. The tasks that were assigned will be discussed by each individual that was responsible for the task, the screen recording captured in step 1 should be played and the person who developed it should discuss it in further detail going in detail about how the flow of the functionality works.
 4. Future improvements section should be included which discusses the future functionality that can be added to the application to make it more efficent and even perform more detailed analysis and any future functionality that we might want to add.
 5. In the end a conclusion section should be included which discussed the key take aways from this project.
