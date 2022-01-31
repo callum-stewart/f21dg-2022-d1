@@ -11,6 +11,8 @@ Once a library has been deemed suitable and compatible with the application arch
 
 Once a library has been adopted, unit tests will then be written to ensure consistent results consistent, reliable results are achieved throughout development. These unit tests may then form the basis for integration tests towards the end of development to ensure the analysis and graphing of the results works as expected. 
 
+A breakdown of the STFT analysis can be found in the Background and Motivation section.
+
 ## T2: Identify & Adopt EMD Algorithm for Signal Analysis
 #### Member Responsible: Callum Stewart
 #### Time Required (Estimate): 5 hours
@@ -19,6 +21,8 @@ Once a library has been adopted, unit tests will then be written to ensure consi
 Another tenet of this application will be its ability to perform Empirical Mode Decomposition analysis on a given sample of signal data. As a consequence of it being a more niche, less well-known algorithm, priority will be assigned to this task to ensure ample time to locate a suitable pre-existing library (for instance, [this one](https://emd.readthedocs.io/en/stable/)) and/or consult the project stakeholders for sample code and resources to re-implement the algorithm independently. The latter being the less desirable of the two options due to the extra time required to ensure the robustness of the implementation; with a 'stable' release of a 3rd party library, a reasonable level of confidence can be assumed that the implementation is robust and free from debilitating bugs. 
 
 Once again, Cole's Jupyter notebook will be utilized as a benchmark and reference point for comparison testing. The sample data provided in the notebook will be utilized within the chosen library, and the results of the EMD analysis will be compared for their similarity. Ideally they will be identical, however if they are not then investigations will be necessary to ascertain why that is the case; if it is due to the accuracy (i.e. length of float values) then this will be deemed a suitable trade-off, however if the results vary greatly then additional time and consultation with the project stakeholders will be required to understand what's going wrong. 
+
+A breakdown of the EMD sifting algorithm, along with pseduocode, can be found in the Background and Motivation section.
 
 ## T3: Identify library and build interface to integrate existing Python code in browser
 #### Member Responsible: Bruce Wilson
