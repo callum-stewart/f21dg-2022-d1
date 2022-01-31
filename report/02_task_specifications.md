@@ -1,4 +1,5 @@
 # Task Specifications
+> NB: In an effort to reduce repeated task requirements, the project will emphasise the importance of the 'Ownership' philosophy, in that the developer who constructs a component is the SME (Subject Matter Expert) of that component, and hence will be best suited for bug-fixing and unit-testing that component. This replaces an explicit 'Unit Testing' task specification, whereby only 1 person in the project would be held accountable for testing components they may not be familiar with. 
 ## T1: Source and adopt existing STFT analysis algorithm
 #### Member Responsible: Callum Stewart
 #### Time Required (Estimate): 3 hours
@@ -25,21 +26,21 @@ Once again, Cole's Jupyter notebook will be utilized as a benchmark and referenc
 #### Depends on: T4
 #### Description:
 To reduce the overall workload of the project, it has been decided that an attempt will be made to ensure interoperability between native Python code and JavaScript. This is because of the development team's familiarity with the language (and hence a reduction in time taken to complete milestones) and the abundance of 1st and 3rd party libraries available for the language, which may ease development considerably (such as Matplotlib, Scipy, Numpy, pandas etc...) 
-Preliminary investigations suggest the [Pyodide](https://pyodide.org/en/stable/) javascript library may be suitable for this purpose. This library makes use of the modern browser feature "WebAssembly", allowing native code from various languages (including a compiled full-featured CPython interpreter, with options in include further python packages) to be embedded entirely in browser. It should however be noted that this is not a done deal, and lots of massaging of Python packages and their requirements will be required to ensure that they work through the browser version. Any Python package that also makes use of C native code will have to be pre-compiled into WebAssembly, which may present difficulty.
+Preliminary investigations suggest the [Pyodide](https://pyodide.org/en/stable/) javascript library may be suitable for this purpose. This library makes use of the modern browser feature "WebAssembly", allowing native code from various languages (including a compiled full-featured CPython interpreter, with options in include further python packages) to be embedded entirely in browser.
 
 For this task to be considered complete, the following sub-tasks must be successfully achieved, with any limitations thoroughly documented:
 1. Crucially, this approach must support being embedded in a real-time webpage. As this project is considered a 'proof-of-concept', performance concerns can be ignored for the most part, except in extreme cases (i.e. waiting 5 seconds for a graphing animation to be generated will be considered acceptable). 
-2. Consultation must be taken with other team members responsible for developing the interactivity of the web-application to identify core/crucial libraries needed to deliver this functionality. Once these libraries are identified, each one must with the intended approach to ensure intended functionality.
-3. Finally, the deployment of this approach must require no 'back-end' or server side communication, aside from delivery of the web application to the client. It must work using only the client's browser engine locally.
+2. Consultation must be taken with other team members responsible for developing the interactivity of the web-application to identify core/crucial libraries and dependencies needed to deliver this functionality. Once these libraries are identified, a version-control mechanism for dependency management will be needed during the project-compilation process to ensure sub-dependencies (i.e. dependencies of dependencies) are compatible with our approach, and that newer versions do not break this compatability.
+3.  Finally, the deployment of this approach must require no 'back-end' or server side communication, aside from delivery of the web application to the client. It must work using only the client's browser engine locally.
 
-Due to the inherent risk associated with this task and the implications it has for the remainder of the project's development cycle, it will be given priority over other tasks to verify its completion. If it cannot be achieved, or at least not practically, then an approach will instead be devised using solely JavaScript and HTML; the results of this testing initiative will need to be discovered within a week of Deliverable 2 commencing. 
+Due to the inherent risk associated with this task and the implications it has for the remainder of the project's development cycle, it will be given priority over other tasks to verify its completion. If it cannot be achieved, or at least not practically, then an approach will instead be devised using solely JavaScript and HTML; the results of this testing initiative will need to be discovered within two weeks of Deliverable 2 commencing. 
 
 ## T4: Project Management & Documentation
 #### Member Responsible: Daniel Scott
 #### Time Required (Estimate): 6 hours
 #### Depends on: Nil
 #### Description:
-The project manager is responsible for organising the timely completion of tasks, removing blockers impacting development, leading group discussion and stepping in to assist other members of the group with their tasks, amongst a number of other tasks vital to ensuring development continues unhindered. In addition to this, they are the primary attaché for writing the documentation required for the project, such as Deliverable submissions. 
+The project manager is responsible for organising the timely completion of tasks, removing blockers impacting development, leading group discussion and stepping in to assist other members of the group with their tasks, amongst a number of other tasks vital to ensuring development continues unhindered. In addition to this, they are the primary attaché for writing the documentation required for the project, such as Deliverable submissions. The project manager will also direct group efforts ensuring they follow the 'Agile' development methodology; this methodology breaks the project down into small, iterative tasks which are assigned to developers in 'Sprints' (small, typically week-long phases throughout the course of development).  
 
 The plan for executing this task is as follows: 
 1. Arrange weekly meetings and monitor attendance to ensure all group members are regularly attending. If recurring absences are observed, privately reach out to the group member(s) inquiring the reason for their absence (should they choose to disclose it) and if they need any additional support with their share of the work. 
@@ -53,9 +54,19 @@ The plan for executing this task is as follows:
 #### Time Required (Estimate): 3 hours
 #### Depends on: T3
 #### Description:
-The project requires functionality which supports the user submitting their own signal data for both STFT and EMD analysis. A robust File I/O class must be created which will support this behaviour. The class will require a brief design to plan out what file types are supported, the format of the supported files (i.e. JSON lines or JSON array?) and how the information read by the class will be stored for reading by other components of the system. The File I/O class is a non-negligible aspect of the implementation, explicitly being defined as a functional requirement, and thus will take a while to identify suitable approaches and libraries to ensure its functionality matches the requirements set forth.
+The project requires functionality which supports the user submitting their own signal data for both STFT and EMD analysis. A robust File I/O class must be created which will support this behaviour. The class will require a brief design to plan out what file types are supported (i.e .csv), the format of the supported files and how the information read by the class will be stored for reading by other components of the system. The File I/O class is a non-negligible aspect of the implementation, explicitly being defined as a functional requirement, and thus will take a while to identify suitable approaches and libraries to ensure its functionality matches the requirements set forth.
 
 In addition to the initial design and implementation, a thorough unit-testing strategy will need to be devised which will vet the class under a wide range of circumstances (empty file, irregular data format, file containing special characters etc.) to ensure reliability and robustness when deployed. 
+#### Pseudocode:
+when: user presses '**Upload Signal Data**' button
+
+then:
+
+1. Open File I/O GUI box for user to select which file to upload for analysis.
+2. Once User selects file, ensure the filename extension matches an approved set in a allow-list
+> 2.1. If extension does not appear on allow-list, present warning dialog to user informing them that their file extension is not supported, and list supported file types. User may then again try to upload their signal data for analysis.
+3. Read contents of supported file into memory
+4. Store contents of file into a global variable that can then be supplied to the Python back-end logic for analysis.
 
 ## T6: Creation of custom input signals
 #### Member Responsible: Bruce Wilson
@@ -149,7 +160,7 @@ Figure X. Loading overlay triggered with changes in signal or method chosen
 Figure X. STFT approach applied to uploaded signal
 
 ## T9: Integration Testing
-#### Member Responsible: ?
+#### Member Responsible: Sebastian
 #### Time Required (Estimate): 10 hours
 #### Depends on: All
 #### Description:
@@ -174,14 +185,14 @@ Steps for Completion
 5. Create tasks to work through that demonstrate the various advantages and disadvantages of each method using various different signal types.
 
 ## T11: Continuous Risk Management
-#### Member Responsible: ?
-#### Time Required (Estimate): ?
+#### Member Responsible: Daniel
+#### Time Required (Estimate): 50
 #### Depends on: All
 #### Description:
 Managing risk within this project will be handled through an iterative proccess of identifying, preventing and mitigating any known risks. This will be done each week to ensure all critical failures are avoided or mitigated early on. Through the D1 deliverable a risk table has been created with existing risks and will be updated by the task leader with feedback from the rest of the group when required. 
 
 ## T12: Demo Presentation
-#### Member Responsible: Saad?
+#### Member Responsible: Saad
 #### Time Required (Estimate): 4 hours
 #### Depends on: All
 #### Description:
@@ -189,13 +200,13 @@ After developing a project its very important to have a presentation for the use
 
 Steps for Demonstration:
 1. Each individual responsible for a piece of functionality they have been working on will capture a short screen recording of the working functionality they have developed.
-2. The team should then make a powerpoint presentation which includes slides on introduction to the project, The background information, architecture of the application, Justification for the technologies used in development and the must have functional requirements, and the planning process which went behind the decisions made to implement the key functionality. Class diagrams flow charts etc can be added to explain the architecture in more detail.
+2. The team should then make a powerpoint presentation which includes slides on introduction to the project, The background information, Architecture of the application, Justification for the technologies used in development and the must have functional requirements, and the planning process which went behind the decisions made to implement the key functionality. Class diagrams, flow charts etc can be added to explain the architecture in more detail.
 3. The tasks that were assigned will be discussed by each individual that was responsible for the task, the screen recording captured in step 1 should be played and the person who developed it should discuss it in further detail going in detail about how the flow of the functionality works.
 4. Future improvements section should be included which discusses the future functionality that can be added to the application to make it more efficent and even perform more detailed analysis and any future functionality that we might want to add.
 5. In the end a conclusion section should be included which discussed the key take aways from this project.
 
 ## T13: Creation of the design manual
-#### Member Responsible: -
+#### Member Responsible: Daniel
 #### Time Required (Estimate): 5 hours
 #### Depends on: All
 #### Description:
