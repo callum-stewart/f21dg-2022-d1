@@ -502,7 +502,7 @@ Using the two examples listed above, we can see that the Python backend is actin
 
 What this means is we can create the Python signal generating code, signal combining, EMD analysis, STFT analysis, as separate Python modules that all can communicated with from Javascript, and all can communicate to store their state with a memory module (or more simply, organised Python globals).
 
-These modules in theory can be developed independently from each other, however they must follow the agreements made previosuly on which data and in what order it will be sent.
+These modules in theory can be developed independently from each other, however they must follow the agreements made previously on which data and in what order it will be sent.
 
 Following the above theory, the following plan is created:
 
