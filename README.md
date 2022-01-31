@@ -246,8 +246,9 @@ The following pseudocode demonstrates a user interaction with the system and dem
         * 1.5.2. Store generated combined signal in Python global variable, accessible from Javascript
     * 1.6. Javascript generates combined signal graph based on global data stored in Python
 
-#### Todo: Wireframe of graphics
+![User configured signal settings](img/configure_settings.PNG)
 
+![Uploaded signal settings](img/upload_settings.PNG)
 
 ## T7: Display of individual signals and STFT / EMD analysis
 #### Member Responsible: Bruce Wilson
@@ -265,14 +266,12 @@ A framework for completing this task is outlined below:
 2. Once key dependancies have been completed, implementation of reading Python global variables -> graphing library in Javascript can be created.
 3. These graphs must then be placed where required in T8.
 
+![Graph shown with pan and zoom controls](img/STFT_upload.PNG)
 
-#### Todo: Wireframe of graphics
-
-[remove in review] NOTE:Did estimates under assumption 10hrs needed per week on this course, I think it was mentioned somewhere -Abie
 
 ## T8: Design and implementation of User-Interface
 #### Member Responsible: Abigail Rivera
-#### Time Required (Estimate): 20 hours (2 weeks)
+#### Time Required (Estimate): 20 hours
 #### Depends on: T3, T6, 
 #### Description:
 A clear consistent user interface (UI) is integral to the fulfilment of the specification as the main use of this web application is educating students with no prior knowledge of the subject matter i.e. Time series decomposition and allowing them to experiment with both methods. Within this task the focus should be around the usefulness and effectiveness of the UI and navigation through the application as an educational tool. All controls, settings and access to graphs should be intuitive to use. 
@@ -283,6 +282,19 @@ Steps for Completion
 3. Communicate with task leads on implementing the EMD, STFT methods as well as input signal manipulation for more detailed setting specifications and include this within the wireframe
 4. Implement bookmarking functionality by adding flags onto URL which will allow the user to share their configuration.
 5. Ensure all class and id names follow the same convention and are consistent with other parts of the application. 
+
+![EMD approach applied to user configured combined signal by product](img/EMD_multiple_product_signal.PNG)
+Figure X. EMD approach applied to user configured combined signal by product
+
+![EMD approach applied to user configured combined signal by sum](img/EMD_multiple_sum_signal.PNG)
+Figure X. EMD approach applied to user configured combined signal by sum
+
+![Loading overlay triggered with changes in signal or method chosen](img/Loading_graphs.PNG)
+Figure X. Loading overlay triggered with changes in signal or method chosen
+
+![STFT approach applied to uploaded signal](img/STFT_upload.PNG)
+Figure X. STFT approach applied to uploaded signal
+
 
 ## T9: Unit Testing
 #### Member Responsible: ?
@@ -300,7 +312,7 @@ Following what is outlined in the Software Integration plan....
 
 ## T11: Creation of a Tutorial
 #### Member Responsible: Abigail Rivera
-#### Time Required (Estimate): 20 hours (2 weeks)
+#### Time Required (Estimate): 20 hours
 #### Depends on: T7, T8
 #### Description:
 A tutorial supplemented by the use of designed web app is crucial to fulfilling deliverable 3. This will involve writing a clear and concise technical article geared toward an audience with a CS background and no prior knowledge of EMD or STFT. The main objective of this task is to allow the user to learn about both methods namely their advantages and disadvantages in order to compare the approaches.
@@ -352,7 +364,78 @@ Steps for Completion
 |:---:|:---:|---|
 ||||
 # Software Integration Plan
-# Gantt Chart
+
+Care must be taken during planning to ensure that each of the developed software systems integrate with one another seamlessly. 
+To do this, a plan must be made that takes into account each tasks dependencies on others, and organises which order software modules must be combined for incremental systems testing.
+
+The implementation side of the project can be split into two key areas. The first is our Python "backend" (by backend, we mean a full CPython WebAssembly implementation running **in browser**) which performs all our numerical calculations and analysis, such as STFT, EMD, and signal generation/combining. 
+The second is our JavaScript/html "frontend", which handles visualisation of the returned data sets from the Python backend, alongside handing data transfer from the user to the backend.
+
+Due to the nature of the Python backend scripting and frontend development, these developments can be parallelised.
+
+However, an agreement must be made in the order of arguments being passed between the frontend interface and the backend. These can be summarised below:
+
+* When "add signal" button is clicked:
+    * Signal type + signal parameters must be passed to the backend from user interface input parameters (plus any summing information for a combined signal).
+    * Backend must return an array of time-points representing the signal (plus any combined signal).
+    * Frontend should handle the array of time-points and display them on an interactive graph.
+
+Note that from the above summary, there is two discrete information passes. When the frontend sends the user input parameters to the backend, and when the backend returns the array of time points.
+Due to the implementation of backend<->front end that we are using, the key thing to take into account is data types when converting from Python to Javascript, for example, numpy arrays may convert to difficult to use objects in Javascript. Testing of this must be performed early to ensure later development can flow easily.
+
+A second data passing scenario is summarised below:
+
+* When "analyse signal" is initiated:
+    * Type of analysis to perform + any parameters must be passed to the backend from the user interface.
+    * The backend already knows which signals have been generated previously (or uploaded signals), alongside their combined signal.
+    * Specified analysis type must be performed by the backend, returning the appropriate data depending on the analysis type (e.g. EMD -> IMF's...).
+
+Note that here, the data that is being passed back may be more complex than simple 1D arrays as before with the time-point signal arrays.
+
+Using the two examples listed above, we can see that the Python backend is acting similar to a RESTful API, however with statefulness (as the Python backend is only serving one user on their own browser, we can save large data back and forth by storing the state of the signals generated).
+
+What this means is we can create the Python signal generating code, signal combining, EMD analysis, STFT analysis, as separate Python modules that all can communicated with from Javascript, and all can communicate to store their state with a memory module (or more simply, organised Python globals).
+
+These modules in theory can be developed independently from each other, however they must follow the agreements made previosuly on which data and in what order it will be sent.
+
+Following the above theory, the following plan is created:
+
+* Development of the frontend interface bar signal graphing/visualisation shall begin immediately.
+* Development of signal generation in Python can begin immediately, with the agreement of which input parameters shall be sent through Javascript to the backend. These signals generated must be stored in a Python global scope, in a format that is reusable in Python and Javascript (e.g. 1D array)
+* Development of the signal combination can begin once the signal generation code is able to save data to the Python global scope. This combined signal will also be stored in a Python global scope.
+* Development of the STFT and EMD algorithms can begin once the signal combination is able to save data to the Python global scope (accessing the combined data signal). 
+* Development of the user-uploading data can begin once the signal generation Python module is complete. This ensures that the uploaded data module will have to use the agreed upon combined signal storing method, and EMD/STFT will be able to access the user uploaded data as if it was generated with our system.
+* Development of the graphing system can begin once signal generation is able to return data from Python. This may not include all signal types, however once one signal type is correctly being stored and returned, it can be used as an example of how all other signals will be returned from Python to be displayed on the frontend.
+* Development of the tutorial can begin once the graphing system alongside frontend interface are near completion.
+
+Due to the nature of the Python modules, unit testing will be able to be performed on each component individually, alongside following the plan above will aid with knowing when each part of the system can join as part of the system integration tests.# Gantt Chart
 # Table of Responsibilities
 # Requirements Traceability Matrix 
+| ID      | Requirement Description | Justification     | Progress  |
+| :---        |    :----:   |          ---: |            ---:       |
+| FR 1      | The application must support Short-Time Fourier Transform (STFT) time series analysis on input signal data.       | Here's this   |                       |
+| FR 2   | The application must support Empirical Mode Decomposition (EMD) time series analysis on input signal data.
+| FR 3   |    The application must be able to identify the type of signal either generated or uploaded by an end user. E.g. Sinusoidal, Trending, Noise, Chirping etc.        | And more      |                       |
+| FR 4   | The application must support the deconstruction of given, identifiable signal data into its respective functional components. I.e. The orthogonal, sinusoidal components of a periodic signal can be extracted via Fast Fourier Transform and delivered to the user.       | And more      |                       |
+| FR 5   | The application must support the extraction of Intrinsic Mode Functions (IMF) from given signal data via EMD analysis.        | And more      |                       |
+| FR 6   | The application must plot the output of a signal analysis request (STFT, EMD) on given input data visually in a graph embedded in the webpage.        | And more      |                       |
+| FR 7   | The application must support simultaneously displaying the original, unaltered signal data and the extracted components on a common time base (i.e. over a period of 10 seconds) in a graph embedded in the webpage.        | And more      |                       |
+| FR 8   | The application must support simultaneously displaying the instantaneous frequencies of the original components alongside the IMF and STFT estimates in a graph embedded in the webpage.        | And more      |                       |
+| FR 9   | The application must support 'bookmarking' functionality; allowing users to share their configurations and parameters for signal analysis.        | And more      |                       |
+| FR 10   | The application should display animations showcasing the differences in techniques and behaviours between EMD and STFT analysis.        | And more      |                       |
+| FR 11   | The application should explain the advantages and disadvantages between STFT and EMD signal analysis.        | And more      |                       |
+| FR 12   | The application should allow the user to generate custom signal data from a set of pre-defined types for processing.        | And more      |                       |
+| FR 13   | The application must be extensively tested via unit and integration testing to verify individual components behave predictably and correctly, and multiple components working in conjunction behave reliably and deliver the expected result.        | And more      |                       |
+| FR 14   | The application must support raw signal data to be uploaded for processing by an end user, and not just rely on pre-generated examples.        | And more      |                       |
+| NFR 15   | The web application will be easy to use for users        | And more      |                       |
+| NFR 16  | The application must have predefined signal types, which the user can choose from through a drop-down list        | And more      |                       |
+| NFR 17  | The web application will have an online tutorial embedded for the users to see and learn about the advantages and disadvantages of EMD and STFT        | And more      |                       |
+| NFR 18   |Allow users to save Data visualisations        | And more      |                       |
+| NFR 19   | The web application will have no back-end, all of the functionality will be implemented on the front-end       | And more      |                       |
+| NFR 20   | The application will have very low or no latency since there is no back-end delays        | And more      |                       |
+| NFR 21   | The application will allow different kinds of data input by the user. It will support data in formats such as csv        | And more      |                       |
+| NFR 22   | The application will be secure, having security measures in place to disable any attacks on the functionality of the application        | And more      |                       |
+| NFR 23   | The application will be efficent with the usage of the memory, to allow smooth animations of the data visualitsation and avoid memory problems        | And more      |                       |
+| NFR 24   | The web application will be compatibility across multiple platforms (FireFox, Chrome)       | And more      |                       |
+| NFR 25   | The web application will be able to handle stress, it will be stress tested to prevent any glitching or any unexpected events to  occur        | And more      |                       |
 # Appendix
