@@ -35,8 +35,6 @@ The final table 'Completed Actions' is used to keep a record of what actions hav
 |The timing of the planned work not being accurate|Low|Medium|If during development there are clear misjudgments of the time taken to complete a task we will adjust the time for the tasks that have not yet been finished to create a clearer image of how long the tasks will take.|
 
 
-### TODO -- add more some general risks
-
 ## Technical Risks
 | Risk Number | Risk Description | Severity | Chance Of Occuring | Mitigation Plan|
 |:---:|---|:---:|:---:|-----|
