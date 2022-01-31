@@ -10,6 +10,14 @@ The application will also have a number of convenience features for users, such 
 ### Time Series Analysis
 A *time series* is a sequence of data points that are indexed or graphed in time order.
 Frequently graphed in a run chart (a graph which features time as its $`y`$ axis), time series occur naturally in a wide array of subjects, such as statistics, finance, weather forecasting, and signal processing.
+
+There are a handful of common types of time series that occur widely, for example:
+1. Simple sinusoids
+1. Linear, exponential, logarithmic, or polynomial trends
+1. White, coloured, or shot noise
+1. Chirps
+1. Products and sums of the above signals, forming complex signals that might be found in the real world 
+
 *Time series analysis* is a set of techniques that can be used in order to reason about time series', enabling an analyst to extract useful insights from the data.
 
 Many time series exhibit an oscillatory behaviour, such as the temperature of a city on any given day of the year, the share price of a given stock, or the audio data recorded by a microphone.
@@ -75,16 +83,38 @@ The sifting procedure to extract these IMFs can be described by the following st
 	1. Is $`h_{ik}`$ an IMF?
 		- If true, set $`c_i = h_{ik}`$ and break
 		- Else increment $`k`$ and continue inner loop
-1. Set the remainder $`r_{i+1} = r_i - C_i`$
+1. Set the remainder $`r_{i+1} = r_i - c_i`$
 1. Does $`r_{i + 1}`$ contain at least two extrema?
 	- If true increment $`i`$ and continue outer loop
 	- Else end routine, with $`r_{i + 1}`$ as the signal residue and $`c_1`$ through $`c_i`$ as the IMFs
 
-Hilbert spectral analysis (HSA) is then applied to the IMFs in order to find the instantaneous frequencies of the IMFs as a function of time.
-The final result is called a Hilbert spectrum, and represents a signal's frequency-time distribution.
+Below is a flowchart describing this algorithm[^fn1]
 
+![Flowchart of EMD algorithm](img/emd_flowchart.png)
+
+
+And below is an animation of the production of an IMF[^fn2]
 
 ![Animation of the sifting procedure used in EMD](img/Emd_example_lowres.gif)
+
+
+The number of sifting steps required to produce an IMF is determined by the stopping criterion.
+There are a number of stopping criterion that can be used for EMD, each with their own advantages and disadvantages.
+The one proposed by Huang et al. (1998) however is the 'Standard Deviation' method.
+For each point in time, the difference between the current component and the previous component is calculated, squared, divided by the square of the previous component evaluated at that point in time, and summed.
+
+```math
+SD_{k}=\sum _{{t=0}}^{{T}}{\frac  {|h_{{k-1}}(t)-h_{k}(t)|^{2}}{h_{{k-1}}^{2}(t)}}
+```
+
+There are other stopping criterion that may be used however, such as S Number Criterion or Energy Difference Tracking.
+
+Below we can see an example of EMD being performed on a complex signal, breaking it down into its constituent modes in descending frequency order[^fn3].
+
+![An example of EMD being performed on a signal](img/emd_example.png)
+
+At this point, if desired, the instantaneous frequency spectrum can be obtained by applying the Hilbert transform on the constituent IMFs.
+The final result would be called a Hilbert spectrum, where the amplitude and instantaneous frequency can be plotted as functions of time on a three dimensional plot.
 
 Unlike STFT, EMD is a self-adaptive signal processing method.
 The IMFs are determined by the signal itself, and are representative of the natural oscillatory mode embedded in the signal.
@@ -97,6 +127,10 @@ Of course, EMD has weaknesses as well, for example:
 1. Mode mixing sometimes occurs between IMFs, where a single IMF includes oscillatory modes that are drastically different or a component of a different IMF all together.
 
 In conclusion, each time-frequency analysis technique has draw backs and advantages, and neither one is conclusively the correct one to use in any given situation.
+
+[^fn1]: Lei, Yaguo, et al. "A review on empirical mode decomposition in fault diagnosis of rotating machinery." *Mechanical systems and signal processing 35.1-2* (2013): 108-126. 
+[^fn2]: Photograph by Geir Kulia and modified by Matt Hall, distributed under a Creative Commons Attribution-ShareAlike 4.0 license.
+[^fn3]: Example adapted from the Jupyter Notebook tutorials created by the developers of Python's `emd` library, available [here](https://emd.readthedocs.io/en/stable/_downloads/e47aacca40568b7bb056bd96535966c4/emd_tutorials_jupyter.zip)
 # Requirements Analysis
 This section of the deliverable documents and details both the functional and constraint requirements of the application system which are expected to be delivered in the final submission. For clarity, a 'functional' requirement refers to a component of the system which has been explicitly specified as a necessary piece of functionality for the system to be considered complete, whilst a 'constraint' requirement can be considered more like a non-behavioural requirement, for example the security or portability of a given system. 
 
