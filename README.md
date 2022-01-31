@@ -569,8 +569,8 @@ The table below outlines how the reponsiblities in the team are distributed usin
 | FR-2-5    |   The application must explain the advantages and disadvantages between STFT and EMD signal analysis.      | T10      |                       |
 | FR-2-6    |  The application should display animations showcasing the differences in techniques and behaviours between EMD and STFT analysis.     | T10      |                       |
 | FR-2-7    |  The application should allow the user to generate custom signal data from a set of pre-defined types for processing.     | T6     |                       |
-| FR 3-1   | The application must be extensively tested via unit and integration testing to verify individual components behave predictably and correctly, and multiple components working in conjunction behave reliably and deliver the expected result.        | T9      |                       |
-| FR 3-2   | The application must support raw signal data to be uploaded for processing by an end user, and not just rely on pre-generated examples.        | T5     |                       |                      
+| FR -3-1   | The application must be extensively tested via unit and integration testing to verify individual components behave predictably and correctly, and multiple components working in conjunction behave reliably and deliver the expected result.        | T9      |                       |
+| FR -3-2   | The application must support raw signal data to be uploaded for processing by an end user, and not just rely on pre-generated examples.        | T5     |                       |                      
 | NFR 1-1   | The web application will be easy to use for users.        | T8     |                       |
 | NFR 1-2  | The application must have predefined signal types, which the user can choose from through a drop-down list.        | T6      |                       |
 | NFR 1-3  | The web application will have an online tutorial embedded for the users to see and learn about the advantages and disadvantages of EMD and STFT.        | T10     |                       |
