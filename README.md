@@ -218,7 +218,7 @@ Once again, Cole's Jupyter notebook will be utilized as a benchmark and referenc
 
 ## T3: Identify library and build interface to integrate existing Python code in browser
 #### Member Responsible: Bruce Wilson
-#### Time Required (Estimate): 15 hours
+#### Time Required (Estimate): 20 hours
 #### Depends on: T4
 #### Description:
 To reduce the overall workload of the project, it has been decided that an attempt will be made to ensure interoperability between native Python code and JavaScript. This is because of the development team's familiarity with the language (and hence a reduction in time taken to complete milestones) and the abundance of 1st and 3rd party libraries available for the language, which may ease development considerably (such as Matplotlib, Scipy, Numpy, pandas etc...) 
@@ -266,7 +266,7 @@ then:
 
 ## T6: Creation of custom input signals
 #### Member Responsible: Bruce Wilson
-#### Time Required (Estimate): 15 hours
+#### Time Required (Estimate): 20 hours
 #### Depends on: T3
 #### Description:
 As per the task description, pre-defined signal types should be included for the user to experiment  with both EMD and STFT analysis. Pre-defined signal types must include the following with modifiable parameters:
