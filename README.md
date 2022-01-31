@@ -531,6 +531,12 @@ Following the above theory, the following plan is created:
 * Development of the tutorial can begin once the graphing system alongside frontend interface are near completion.
 
 Due to the nature of the Python modules, unit testing will be able to be performed on each component individually, alongside following the plan above will aid with knowing when each part of the system can join as part of the system integration tests.# Gantt Chart
+![Whole Project Gantt Chart](img/GanttChartFinal.PNG)
+
+
+Note.  
+- "* <-" denotes that this task is dependant on all other tasks
+- "-> *" denotes that all tasks are dependent on this task
 # Table of Responsiblities
 The table below outlines how the reponsiblities in the team are distributed using the RACI model with the acronyms being explained in the key below. 
 
