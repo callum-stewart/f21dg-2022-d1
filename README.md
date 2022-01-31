@@ -345,17 +345,27 @@ Figure X. STFT approach applied to uploaded signal
 
 ## T9: Unit Testing
 #### Member Responsible: ?
-#### Time Required (Estimate): ? hours
+#### Time Required (Estimate): 50 hours
 #### Depends on: All
 #### Description:
-...
+All completed software modules are to be subjected to unit testing to isolate bugs in each module and prevent whole application failure. 
+
+Steps for completion:
+1. Identify methodology or framework to be used for unit testing, coordinate with head of integration testing to ensure this is appropriate. 
+2. Iteratively include all modules as they are completed and updated into the unit testing suites and provide feedback in a timely manner to the team with any failures identified and possible solutions if applicable.
+3. Once modules have been tested include this with evidence in the the test report. 
+4. Test all system validation with likely use cases and record within the test report. 
+
 ## T10: Integration Testing
 #### Member Responsible: ?
-#### Time Required (Estimate): ? hours
+#### Time Required (Estimate): 10 hours
 #### Depends on: All
 #### Description:
-Following what is outlined in the Software Integration plan....
-...
+All software modules that pass unit testing will be subjected to integration testing to ensure the application works as a whole. 
+
+Steps for completion:
+1. Identify methodology or framework to be used for integration testing, ensure this is compatible with unit testing process. 
+2. Iteratively include all modules as they are completed and updated into the integration testing and provide feedback in a timely manner to the team with any failures identified and possible solutions if applicable.
 
 ## T11: Creation of a Tutorial
 #### Member Responsible: Abigail Rivera
@@ -371,26 +381,40 @@ Steps for Completion
 4. Outline a guide with screenshots and descriptions to using the application including importing signals,combining signals, configuring method settings, applying each method, navigating different graphs produced, overlaying graphs on same time axis and bookmarking. 
 5. Create tasks to work through that demonstrate the various advantages and disadvantages of each method using various different signal types.
 
-
 ## T12: Continuous Risk Management
 #### Member Responsible: ?
-#### Time Required (Estimate): ? hours
+#### Time Required (Estimate): ?
 #### Depends on: All
 #### Description:
+Managing risk within this project will be handled through an iterative proccess of identifying, preventing and mitigating any known risks. This will be done each week to ensure all critical failures are avoided or mitigated early on. Through the D1 deliverable a risk table has been created with existing risks and will be updated by the task leader with feedback from the rest of the group when required. 
 
 ## T13: Demo Presentation
-#### Member Responsible: All
-#### Time Required (Estimate): 4
+#### Member Responsible: Saad?
+#### Time Required (Estimate): 4 hours
 #### Depends on: All
 #### Description:
- After developing a project its very important to have a presentation for the users that can watch it and understand the full functionality of the application. After the completion of this web application, all the members of the team will  make a seminar style project demonstration and a presentation. The steps involved in creating the demo are listed as follows:
+After developing a project its very important to have a presentation for the users that can watch it and understand the full functionality of the application. After the completion of this web application, all the members of the team will  make a seminar style project demonstration and a presentation. The steps involved in creating the demo are listed as follows:
 
 Steps for Demonstration:
 1. Each individual responsible for a piece of functionality they have been working on will capture a short screen recording of the working functionality they have developed.
 2. The team should then make a powerpoint presentation which includes slides on introduction to the project, The background information, Archetecture of the application, Justification for the technologies used in development and the must have functional requirements, and the planning process which went behind the decisions made to implement the key functionality. Class diagrams flow charts etc can be added to explain the archetecture in more detail.
 3. The tasks that were assigned will be discussed by each individual that was responsible for the task, the screen recording captured in step 1 should be played and the person who developed it should discuss it in further detail going in detail about how the flow of the functionality works.
 4. Future improvements section should be included which discusses the future functionality that can be added to the application to make it more efficent and even perform more detailed analysis and any future functionality that we might want to add.
-5. In the end a conclusion section should be included which discussed the key take aways from this project
+5. In the end a conclusion section should be included which discussed the key take aways from this project.
+
+## T13: Creation of the design manual
+#### Member Responsible: -
+#### Time Required (Estimate): 5 hours
+#### Depends on: All
+#### Description:
+As part of the D2 deliverable, a design manual needs to be created that includes a top-level design and enough detail to allow reuse and modification for other students with similar backgrounds without prior knowledge or communication about the application. 
+
+Steps for completion:
+1. Identify and document all technologies and libraries used with links where appropriate.
+2. Include documentation of how each software module was implemented and any critical notes that may affect further modification. 
+3. Design a top-level diagram of how each part of the system works together.
+
+
 # Techincal Risk Analysis
 ## Risk Table
 | Risk Number | Risk Description | Severity | Chance Of Occuring |
