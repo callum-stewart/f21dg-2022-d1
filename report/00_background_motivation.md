@@ -62,17 +62,27 @@ The amplitude and frequency of an IMF may vary with time, and must satisfy both 
 2. The mean envelope value (defined by a spline described by the local maxima and the local minima) must be nearly zero
 
 The sifting procedure to extract these IMFs can be described by the following steps:
-1. Identify all of the local maxima and minima (the extrema)
-1. Connect the minima with a cubic spline in order to define the lower envelope
-1. Connect the maxima with a cubic spline in order to define the upper envelope
-1. Calculate the mean of the envelope, $`m1`$. The envelope defined by the cubic splines should contain all of the data.
-1. For every data point, the difference between that data and the mean $`m1`$ is the first component $`h1 = X(t) - m1`$
-1. $`h1`$ should, ideally, be an IMF, as it should be symmetric, with all maxima positive and all minima negative
+1. Initialise $`r_0 = X(t)`$ and $`i = 1`$
+1. Start outer loop
+1. Extract the $`i`$th IMF $`c_i`$
+	1. Initialise $`h_(k(k-1)) = r_(i-1)`$, $`k = 1`$
+	1. Start inner loop
+	1. Identify all of the local maxima and minima (the extrema)
+	1. Interpolate the minima with a cubic spline in order to define the lower envelope
+	1. Interpolate the maxima with a cubic spline in order to define the upper envelope
+	1. Calculate the mean $`m_(i(k-1))`$ of the upper and lower envelopes of $`h_(i(k-1))`$. The envelope defined by the two cubic splines should contain all data.
+	1. Set $`h_(ik) = h_(i(k-1)) - m_(i(k-1))`$
+	1. Is $`h_(ik)`$ an IMF?
+		- If true, set $`c_i = h_(ik)`$ and break
+		- Else increment $`k`$ and continue inner loop
+1. Set the remainder $`r_(i+1) = r_i - C_i`$
+1. Does $`r_(i + 1)`$ contain at least two extrema?
+	- If true increment $`i`$ and continue outer loop
+	- Else end routine, with $`r_(i + 1)`$ as the signal residue and $`c_(1)`$ through $`c_(i)`$ as the IMFs
 
 Hilbert spectral analysis (HSA) is then applied to the IMFs in order to find the instantaneous frequencies of the IMFs as a function of time.
 The final result is called a Hilbert spectrum, and represents a signal's frequency-time distribution.
 
-The first step of EMF 
 
 ![Animation of the sifting procedure used in EMD](img/Emd_example_lowres.gif)
 
