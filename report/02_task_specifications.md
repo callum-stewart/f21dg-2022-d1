@@ -58,7 +58,7 @@ The project requires functionality which supports the user submitting their own 
 In addition to the initial design and implementation, a thorough unit-testing strategy will need to be devised which will vet the class under a wide range of circumstances (empty file, irregular data format, file containing special characters etc.) to ensure reliability and robustness when deployed. 
 
 ## T6: Creation of custom input signals
-#### Member Responsible: ?
+#### Member Responsible: Bruce Wilson
 #### Time Required (Estimate): 15 hours
 #### Depends on: T3
 #### Description:
@@ -106,7 +106,7 @@ The following pseudocode demonstrates a user interaction with the system and dem
 ![Uploaded signal settings](img/upload_settings.PNG)
 
 ## T7: Display of individual signals and STFT / EMD analysis
-#### Member Responsible: Bruce Wilson
+#### Member Responsible: Saad Badshah
 #### Time Required (Estimate): 20 hours
 #### Depends on: T1, T2, T3, T6, T8
 #### Description:
