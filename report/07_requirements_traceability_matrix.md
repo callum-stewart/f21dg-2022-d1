@@ -2,7 +2,7 @@
 | ID      | Requirement Description | Task ID     | Progress  |
 | :---        |    :----:   |          ---: |            ---:       |
 | FR 1      | The application must support Short-Time Fourier Transform (STFT) time series analysis on input signal data.       | T1   |                       |
-| FR 2   | The application must support Empirical Mode Decomposition (EMD) time series analysis on input signal data.
+| FR 2   | The application must support Empirical Mode Decomposition (EMD) time series analysis on input signal data. |      T2                 |
 | FR 3   |    The application must be able to identify the type of signal either generated or uploaded by an end user. E.g. Sinusoidal, Trending, Noise, Chirping etc.        | T2      |                       |
 | FR 4   | The application must support the deconstruction of given, identifiable signal data into its respective functional components. I.e. The orthogonal, sinusoidal components of a periodic signal can be extracted via Fast Fourier Transform and delivered to the user.       | T6      |                       |
 | FR 5   | The application must support the extraction of Intrinsic Mode Functions (IMF) from given signal data via EMD analysis.        | And more      |                       |
