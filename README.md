@@ -191,8 +191,8 @@ Both the functional and constraint requirements have been ordered according to t
 ### Flexibility
 | Requirement Number | Description                                                                                                                                                                                                                                   | MoSCoW Prioritization |
 |--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------|
-| NFR 3-1             | The web application will be compatibility across multiple platforms (FireFox, Chrome) | Could Have             |
-| NFR 3-2             | The web application will be able to handle stress, it will be stress tested to prevent any glitching or any unexpected events to  occur | Could Have             |
+| NFR 3-1             | The web application will be compatibility across multiple platforms (FireFox, Chrome). | Could Have             |
+| NFR 3-2             | The web application will be able to handle stress, it will be stress tested to prevent any glitching or any unexpected events to  occur. | Could Have             |
 | NFR 3-3             | The application will not be tested or designed for use on Mobile devices. | Will Not Have             |                      
 # Task Specifications
 > NB: In an effort to reduce repeated task requirements, the project will emphasise the importance of the 'Ownership' philosophy, in that the developer who constructs a component is the SME (Subject Matter Expert) of that component, and hence will be best suited for bug-fixing and unit-testing that component. This replaces an explicit 'Unit Testing' task specification, whereby only 1 person in the project would be held accountable for testing components they may not be familiar with. 
