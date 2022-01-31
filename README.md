@@ -574,15 +574,14 @@ The table below outlines how the reponsiblities in the team are distributed usin
 | FR-2-7    |  The application should allow the user to generate custom signal data from a set of pre-defined types for processing.     | T11      |                       |
 | FR 3-1   | The application must be extensively tested via unit and integration testing to verify individual components behave predictably and correctly, and multiple components working in conjunction behave reliably and deliver the expected result.        | T9      |                       |
 | FR 3-2   | The application must support raw signal data to be uploaded for processing by an end user, and not just rely on pre-generated examples.        | T8     |                       |                      
-| FR 14   | The application must support raw signal data to be uploaded for processing by an end user, and not just rely on pre-generated examples.        | T3      |                       |
-| NFR 15   | The web application will be easy to use for users        | T8     |                       |
-| NFR 16  | The application must have predefined signal types, which the user can choose from through a drop-down list        | T6      |                       |
-| NFR 17  | The web application will have an online tutorial embedded for the users to see and learn about the advantages and disadvantages of EMD and STFT        | T10     |                       |
-| NFR 18   |Allow users to save Data visualisations        | T8      |                       |
-| NFR 19   | The web application will have no back-end, all of the functionality will be implemented on the front-end       | T3     |                       |
-| NFR 20   | The application will have low latency, the application will be effiecient in regards to the overhead of the data visualisation        | T7     |                       |
-| NFR 21   | The application will allow different kinds of data input by the user. It will support data in formats such as CSV        | T5      |                       |
-| NFR 22   | The application will be efficent with the usage of the memory, to allow smooth animations of the data visualitsation and avoid memory problems        |T7     |                       |
-| NFR 23   | The web application will be compatibility across multiple platforms (FireFox, Chrome)       | T8    |                       |
-| NFR 24   | The web application will be able to handle stress, it will be stress tested to prevent any glitching or any unexpected events to  occur        | T9      |                       |
-# Appendix
+| NFR 1-1   | The web application will be easy to use for users.        | T8     |                       |
+| NFR 1-2  | The application must have predefined signal types, which the user can choose from through a drop-down list.        | T6      |                       |
+| NFR 1-3  | The web application will have an online tutorial embedded for the users to see and learn about the advantages and disadvantages of EMD and STFT.        | T10     |                       |
+| NFR 1-4  |Allow users to save data visualisations.        | T8      |                       |
+| NFR 2-1  | The web application will have no back-end, all of the functionality will be implemented on the front-end.       | T3     |                       |
+| NFR 2-1  | The application will have low latency, the application will be effiecient in regards to the overhead of the data visualisation.        | T7     |                       |
+| NFR 2-1   | The application will allow different kinds of data input by the user. It will support data in formats such as CSV.        | T5      |                       |
+| NFR 2-1   | The application will be efficent with the usage of the memory, to allow smooth animations of the data visualisation and avoid memory problems.        |T7     |                       |
+| NFR 3-1   | The web application will be compatibility across multiple platforms (FireFox, Chrome).       | T8    |                       |
+| NFR 3-2   | The web application will be able to handle stress, it will be stress tested to prevent any glitching or any unexpected events to  occur.        | T9      |                       |
+| NFR 3-3   | The application will not be tested or designed for use on Mobile devices.        | T9      |                       |# Appendix
