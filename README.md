@@ -1,8 +1,7 @@
 # Submission Notes
-This document is and respository is being actively updated and is not necessarily a reflection of its state when it was submitted.
+This document and respository is being actively updated and is not necessarily a reflection of its state when it was submitted.
 The submission commit is `3cf6d06172516ce9a6f57a18b2ebf53f1fb099b0` and has the tag `d1-submission`.
 You can checkout the report in the state it was submitted at any time by executing `git checkout d1-submission`.
-[
 # Background and Motivation
 ## Motivation
 In this project we are seeking to create an educational tool that can be used to interactively explore the differences between two approaches to time series analysis of non-stationary signals. 
